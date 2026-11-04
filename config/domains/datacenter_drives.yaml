@@ -1,0 +1,44 @@
+# Domain: IT infrastructure — Backblaze Drive Stats SMART telemetry
+# Lineage: DEBS Grand Challenge 2024 (drive telemetry); SIMBA IT Monitor dashboard
+domain: datacenter_drives
+perturbation:
+  # Daily snapshots: admit up to half a source period, then delay selected rows
+  # across multiple snapshot boundaries.
+  allowed_lateness_s: 43200
+  late_window: 100000
+source:
+  name: Backblaze Hard Drive Test Data
+  url: https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data
+  notes: Quarterly zip of daily CSV snapshots, one row per drive per day.
+  license: free with attribution
+entity: drive_serial        # ~300K active drives -> the high-cardinality domain
+metrics:
+  - name: temperature
+    unit: Celsius           # smart_194_raw
+  - name: power_on_hours
+    unit: hours             # smart_9_raw
+  - name: realloc_sectors
+    unit: count             # smart_5_raw
+event_time: snapshot date (UTC ISO8601, daily)
+dedupe_identity: [drive_serial, snapshot_date, metric]
+buckets:
+  fine: hour
+  coarse: day
+notes: |
+  Real production telemetry. Known data-quality quirks in some quarterly
+  releases (documented duplicate rows) make D1 meaningful on unperturbed data.
+
+# Raw-source -> neutral-schema mapping used by the generic normalizer
+# (src.schema.normalize_records) in scripts/ingest/ingest_datacenter_drives.py.
+# One drive/day CSV row is a "wide" record: each SMART column explodes into its
+# own neutral row. event_time_utc is derived from the daily `date` column.
+normalize:
+  layout: wide
+  entity_field: serial_number     # drive serial -> entity
+  event_time_field: event_time_utc  # derived: date + "T00:00:00Z"
+  source_id_field: date
+  metric_fields:
+    temperature: smart_194_raw    # Celsius
+    power_on_hours: smart_9_raw   # hours
+    realloc_sectors: smart_5_raw  # count
+  topic_const: backblaze

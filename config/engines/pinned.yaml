@@ -1,0 +1,71 @@
+# Pinned SUT versions (plan §5: "Engine images pinned by Docker digest").
+# The compose file (docker/streaming-engines.yml) references every image as
+# tag@sha256 with EXACTLY these digests — if you bump a version, update both
+# files and note the date. The in-process reference backend is pinned by the
+# source commit; the in-process PyFlink and PySpark packages remain pinned via
+# requirements.txt for the comparison deployments only.
+#
+# Digests resolved from the images actually used for the smoke-test runs.
+#
+# DATES. `version_cutoff_utc` is the release-eligibility cutoff: no image may
+# pin a version published after it. `resolved_utc` records when the original pin
+# set was resolved. A per-image `digest_verified_utc` records when a later
+# replacement digest was actually verified against the registry; it is never
+# backdated to the cutoff, because a digest confirmed in September was not
+# resolved in July. The image CONTENT is still provably pre-cutoff: the manifest
+# is content-addressed, and its config records the build timestamp and the
+# release commit it was built from.
+version_cutoff_utc: "2026-07-26"
+resolved_utc: "2026-07-26"
+
+containers:
+  materialize:
+    image: materialize/materialized:latest
+    digest: sha256:ccfaa64a87d16beff62b86cc6f8e97caa5d120c6e8eced3573f0693c2cf69c94
+    reported_version: v26.25.0        # from the server NOTICE banner
+  risingwave:
+    image: risingwavelabs/risingwave:latest
+    digest: sha256:18f5057c032a63d4513c6a700fa37489efe59b19f5bb56047b66b259ffb92aef
+    reported_version: v2.8.4         # SELECT version() on the digest-pinned server
+  kafka:
+    image: confluentinc/cp-kafka:7.5.1
+    digest: sha256:dc9b972db0029bca9c9fa33fb7d271bbd6de35bfe56bed42d78dcb4b0b63f6b2
+  ksqldb:
+    image: confluentinc/ksqldb-server:0.29.0
+    digest: sha256:1a3266adff1a53a08f2e2d749e0032b77cf3a9b16b4d86d9a4481321bad00010
+  flink:
+    # Session cluster (JobManager, TaskManager, SQL Gateway). The image is built
+    # by docker/flink-cluster/Dockerfile FROM this digest and adds only the
+    # Kafka SQL connector 5.0.0-2.2, verified by SHA-256 at build time.
+    image: flink:2.2.1-scala_2.12-java17
+    digest: sha256:13b1328bbb86263b41e740f06790f49c8512a26a5c0eba36a8f91b1983d33a6c
+    reported_version: 2.2.1
+    kafka_connector: flink-sql-connector-kafka-5.0.0-2.2 (sha256 5605c691d11a501382c383fecba37a7a552467da5ab7ba904ef5d6f3d62c5616)
+    digest_verified_utc: "2026-09-17"
+  spark:
+    # Standalone cluster (master, worker, driver service), built by
+    # docker/spark-cluster/Dockerfile FROM this python digest with
+    # pyspark==4.2.0, the same release the in-process adapter pinned.
+    image: python:3.11-slim
+    digest: sha256:9e1912aab0a30bbd9488eb79063f68f42a68ab0946cbe98fecf197fe5b085506
+    reported_version: 4.2.0
+    digest_verified_utc: "2026-09-17"
+  feldera:
+    # v0.324.0 is the newest stable release published on or before the
+    # version_cutoff_utc above (published 2026-07-23T22:03:51Z; the next stable,
+    # v0.325.0, was published 2026-07-29 and is therefore ineligible). The image
+    # config records created=2026-07-22T17:41:41Z and
+    # org.opencontainers.image.revision=79b56b76bc4f23b7d518ce5d48c6f5b21b269214,
+    # which is the release's target commit, so this digest's content predates
+    # the cutoff even though it was verified later.
+    image: ghcr.io/feldera/pipeline-manager:0.324.0
+    digest: sha256:7eb67e48f6cb0d6e65db56cd07e3bbf297af8c48a2be41b0618839b7ec50ea48
+    reported_version: v0.324.0
+    version_cutoff_utc: "2026-07-26"
+    digest_verified_utc: "2026-09-02"
+
+in_process:                            # versions come from requirements.txt
+  python: "3.12.12"
+  flink_inprocess: "apache-flink==2.2.1"   # comparison deployment, not scored
+  spark_inprocess: "pyspark==4.2.0"         # comparison deployment, not scored
+  reference: src/engine (this repository, pinned by git commit)

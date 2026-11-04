@@ -1,0 +1,59 @@
+# Durability OVERLAY for D5 (post-recovery state equivalence, scripts/run/run_d5_recovery.py).
+#
+# The fast smoke/diagnostic path uses only the base compose (ephemeral, fast).
+# D5 needs engine state to survive a crash+restart, so it brings the stack up with
+# BOTH files:
+#   docker compose -f docker/streaming-engines.yml \
+#                  -f docker/streaming-engines.durable.yml up -d
+# then confirms each engine actually survives a restart with state intact:
+#   python scripts/run/verify_persistence.py --engine <name>
+#
+# WHY the overlay is small: D5 uses `docker restart` (stop+start the SAME
+# container), which PRESERVES the container filesystem. So an engine that writes
+# its state to disk survives a restart even WITHOUT a named volume. The named
+# volumes below additionally let state survive full RECREATION (down/up). The one
+# engine that fails restart regardless is RisingWave `playground` (in-memory,
+# never persists) -- the load-bearing change here is switching it to a disk-backed
+# mode. Every path/mode below is a STARTING POINT; verify_persistence.py is the
+# arbiter and will tell you if a data-dir or mode is wrong for the pinned image.
+
+services:
+
+  materialize:
+    # Materialize persists its catalog + arrangements to disk and rehydrates on
+    # restart. Volume lets that survive recreation too. VERIFY the data dir path.
+    volumes:
+      - mz_data:/mzdata
+
+  kafka:
+    # ksqlDB's state is rebuilt from Kafka on restart, so Kafka must be durable.
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+
+  risingwave:
+    # `playground` (base compose) is IN-MEMORY -> state is lost on restart, which
+    # makes D5 a meaningless auto-fail. Switch to a disk-backed single-node.
+    #
+    # --store-directory is pinned explicitly rather than relying on the image's
+    # default (~/.risingwave). It backs BOTH the meta store and the object store,
+    # and it is the meta store that holds the view catalog: when it is absent,
+    # recovery fails with "table or source not found: v_hourly" rather than with
+    # an empty view, so the cell reads as a harness error instead of a verdict.
+    command: ["single-node", "--store-directory", "/root/.risingwave"]
+    volumes:
+      - rw_data:/root/.risingwave
+
+  feldera:
+    # The pipeline-manager metadata survives on the container FS, but a pipeline
+    # only RESTORES its computed state on restart if CHECKPOINTING is enabled --
+    # that is a per-pipeline runtime_config change in src/adapters/feldera.py,
+    # tracked with the D5 runner, not here. Without it, Feldera restarts empty
+    # (which verify_persistence.py will correctly report as not-yet-durable).
+    volumes:
+      - feldera_data:/working-dir
+
+volumes:
+  mz_data:
+  kafka_data:
+  rw_data:
+  feldera_data:

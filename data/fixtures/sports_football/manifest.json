@@ -1,0 +1,145 @@
+{
+  "domain": "sports_football",
+  "base_log": "data/normalized/sports_football/log.parquet",
+  "base_sha256": "5d909a92afd3f0205745f3aaf43515b634ccc00a013445e38019c9a57ed81225",
+  "base_rows": 1000000,
+  "seed": 1337,
+  "config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "domain_config": "config/domains/sports_football.yaml",
+  "rates": {
+    "duplicate_rate": 0.005,
+    "reorder_window": 100,
+    "late_rate": 0.002,
+    "late_window": 20000,
+    "allowed_lateness_s": 1,
+    "restate_rate": 0.01,
+    "restate_window": 5000
+  },
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "dedupe_identity": "source_observation",
+  "contract_version": 2,
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "invocation_id": "benchmark_20261002T213200Z_prepare",
+  "campaign_id": "benchmark_20261002T213200Z",
+  "campaign_phase": "prepare",
+  "repeat_index": 0,
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "python_version": "3.12.12",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 16,
+  "memory_bytes": 135062691840,
+  "disk_total_bytes": 418916810752,
+  "written_utc": "2026-10-02T21:38:13Z",
+  "fixtures": [
+    {
+      "diagnostic": "D1",
+      "name": "d1_dup.parquet",
+      "sha256": "0ba7ed7cb6aa393111a8f3c3a4adf352e346680c301ed7c84954d7c7d07cf464",
+      "rows": 1005000,
+      "perturbation": "duplicate",
+      "rate": 0.005,
+      "window": 2000,
+      "injected_duplicates": 5000
+    },
+    {
+      "diagnostic": "D2",
+      "name": "d2_reorder.parquet",
+      "sha256": "1b5d3e6fdafc7f73ac07b62c49a6a24af483a0ac59e7259c7f114f57616a9802",
+      "rows": 1000000,
+      "perturbation": "bounded_reorder",
+      "reorder_window": 100,
+      "reorder_mode": "event_time",
+      "event_time_inversion_rate": 0.4967874967874968,
+      "distinct_event_times": 145006
+    },
+    {
+      "diagnostic": "D4",
+      "name": "d4_late.parquet",
+      "sha256": "d6b555196236f9920b274b44b83dc4bdafa22089389549519fbb968f77cd17d8",
+      "rows": 1000000,
+      "perturbation": "late_arrival",
+      "rate": 0.002,
+      "late_window": 20000,
+      "late_rows": 2000,
+      "allowed_lateness_s": 1,
+      "control_order": "event_time_utc,dedupe_id",
+      "injected_target_ids_sha256": "4da22985fa2dc369afb5abd3f77359fbb87331c70648c47a9e3a562949445245",
+      "event_time_inversion_rate": 0.001985001985001985,
+      "behind_watermark": 2000,
+      "behind_watermark_first_50k": 115,
+      "control_beyond_allowed_lateness": 0,
+      "control_beyond_allowed_lateness_at_50k": 0,
+      "beyond_allowed_lateness": 1982,
+      "beyond_allowed_lateness_at_50k": 115,
+      "injected_targets_present_at_50k": 115,
+      "injected_beyond_allowed_lateness_at_50k": 115,
+      "net_beyond_allowed_lateness_at_50k": 115,
+      "scale_selection": "uniform_full_log",
+      "scale_checks": {
+        "10000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 20,
+          "net_beyond_allowed_lateness": 20,
+          "injected_targets_present": 21,
+          "injected_beyond_allowed_lateness": 20
+        },
+        "50000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 115,
+          "net_beyond_allowed_lateness": 115,
+          "injected_targets_present": 115,
+          "injected_beyond_allowed_lateness": 115
+        },
+        "200000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 410,
+          "net_beyond_allowed_lateness": 410,
+          "injected_targets_present": 412,
+          "injected_beyond_allowed_lateness": 410
+        },
+        "500000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 994,
+          "net_beyond_allowed_lateness": 994,
+          "injected_targets_present": 1001,
+          "injected_beyond_allowed_lateness": 994
+        },
+        "1000000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 1982,
+          "net_beyond_allowed_lateness": 1982,
+          "injected_targets_present": 2000,
+          "injected_beyond_allowed_lateness": 1982
+        }
+      }
+    },
+    {
+      "diagnostic": "D7",
+      "name": "d7_restate.parquet",
+      "sha256": "412c0974340f89211faa784affe4145a2c130d2c47873946d68dc1443a520e75",
+      "rows": 1010000,
+      "perturbation": "restatement",
+      "rate": 0.01,
+      "restate_window": 5000,
+      "restatements": 10000,
+      "base_observations": 1000000,
+      "alpha": 0.01
+    }
+  ],
+  "self_check": "PASS"
+}

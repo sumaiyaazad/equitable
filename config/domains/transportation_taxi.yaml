@@ -1,0 +1,43 @@
+# Domain: Transportation — NYC TLC taxi trip records
+# Lineage: DEBS Grand Challenge 2015 (taxi); IDEBench flights (transportation)
+domain: transportation_taxi
+perturbation:
+  # Trip completions have second-level timestamps; allow five minutes.
+  allowed_lateness_s: 300
+  late_window: 20000
+source:
+  name: NYC TLC Trip Record Data
+  url: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+  notes: Monthly parquet files (yellow taxi). Event = completed trip at dropoff time.
+  license: NYC Open Data
+entity: pickup_zone         # TLC zone id (~265 zones)
+metrics:
+  - name: fare
+    unit: USD
+  - name: trip_distance
+    unit: miles
+  - name: duration
+    unit: seconds
+event_time: dropoff_datetime (UTC ISO8601)
+dedupe_identity: [source_file, source_row, metric]
+buckets:
+  fine: hour
+  coarse: day
+notes: |
+  Natural late/corrected records (trips uploaded after shift end) exercise D4.
+  Billions of rows available across years for the T scaling knob.
+
+# Raw-source -> neutral-schema mapping used by the generic normalizer
+# (src.schema.normalize_records) in scripts/ingest/ingest_taxi.py. One TLC
+# trip is a "wide" record: each metric column explodes into its own neutral
+# row. dropoff_utc and duration are derived by the parser before normalization.
+normalize:
+  layout: wide
+  entity_field: PULocationID      # TLC pickup-zone id -> entity
+  event_time_field: dropoff_utc   # derived ISO8601 from tpep_dropoff_datetime
+  source_id_field: _source_event_id
+  metric_fields:
+    fare: fare_amount             # USD
+    trip_distance: trip_distance  # miles
+    duration: duration            # seconds, derived = dropoff - pickup
+  topic_const: tlc_yellow

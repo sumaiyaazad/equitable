@@ -1,0 +1,79 @@
+{
+  "domain": "finance_markets",
+  "source": "Binance spot monthly trades (data.binance.vision)",
+  "rows": 1000000,
+  "entities": 6,
+  "metrics": [
+    "trade_price",
+    "trade_size"
+  ],
+  "sha256": "fd0a6e54469294741a470c40c398850ccd18d3875355536a71a35bb08ec9e16f",
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "contract_version": 2,
+  "dedupe_identity": "source_observation",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "written_utc": "2026-10-02T21:36:09Z",
+  "log_path": "data/normalized/finance_markets/log.parquet",
+  "rows_before_cap": 174778882,
+  "selection": "uniform 1000000 evenly spaced by (event_time_utc, dedupe_id)",
+  "mode": "from_raw",
+  "month": "2024-06",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ADAUSDT"
+  ],
+  "source_preselection": {
+    "method": "lowest pandas uint64 hash(symbol|trade_id) per symbol",
+    "trades_per_symbol": 87500,
+    "symbols_requested": 6
+  },
+  "input_sha256": "78386c9803be16d4e48ce0dfd1b2507b1990fc4e295ecaac852b8830e0ff0f32",
+  "input_file_count": 6,
+  "input_files": [
+    {
+      "name": "BTCUSDT-trades-2024-06.zip",
+      "sha256": "5c50c844c793bc0b4e2c4f937fef50ec570f3a5d5ba5b803b823183b5077b6cc",
+      "bytes": 409291743
+    },
+    {
+      "name": "ETHUSDT-trades-2024-06.zip",
+      "sha256": "fc4faf7c771c714a388e755f2c62a42bee3d7d52a52a1631b28c9cf9dd1bbfac",
+      "bytes": 245172737
+    },
+    {
+      "name": "BNBUSDT-trades-2024-06.zip",
+      "sha256": "7137646cee968309a7b7e4d787b7822a780a457d4bd34cc4d13c928796737323",
+      "bytes": 108758767
+    },
+    {
+      "name": "SOLUSDT-trades-2024-06.zip",
+      "sha256": "ddd0470dc312fa628497b0a4cecdda2d89a4b21c9a97a432e452d60bffd82607",
+      "bytes": 191598889
+    },
+    {
+      "name": "XRPUSDT-trades-2024-06.zip",
+      "sha256": "0fed4fbbee3d6cf7684df2ad7a18f52c718e8617b210145c5f391c1e99f093cd",
+      "bytes": 50357467
+    },
+    {
+      "name": "ADAUSDT-trades-2024-06.zip",
+      "sha256": "d3e65a79d38c7d8bacbc2a646f685a8886778ee1c3b288779c5f6b11a541346b",
+      "bytes": 31579785
+    }
+  ]
+}

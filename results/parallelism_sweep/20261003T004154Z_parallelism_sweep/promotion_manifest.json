@@ -1,0 +1,14 @@
+{
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "block": "parallelism_sweep",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "files_sha256": {
+    "parallelism_sweep.csv": "724c0369994dcfe1150d408a6dd674acfe6465bc27347e15edc0c2c5e75a1648",
+    "summary.json": "acb41b458d0505baef9e1e2c93341dcac02f0a6a9518719de81748363e390b4b"
+  },
+  "finalizer_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "invocation_id": "benchmark_20261002T213200Z_validation",
+  "promoted_utc": "2026-10-05T18:23:37Z",
+  "source_run": "runs/20261003T004154Z_parallelism_sweep"
+}

@@ -1,0 +1,208 @@
+# Curated, primary-source-confirmed witnesses for Lemma 1.
+#
+# This inventory establishes only that each condition has occurred in a released
+# streaming system. It is not a prevalence survey, and counts by condition or
+# engine must not be interpreted as relative risk.
+#
+# Required fields describe the source, engine, diagnostic, condition, public
+# URL, status, author summary, and human confirmation. Exactly one entry for each
+# condition 1--7 has `representative: true`; those seven entries supply Table 11.
+# `condition_name`, `paper_label`, and `paper_text` are LaTeX fragments emitted
+# by scripts/figures/tab_11_witnesses.py.
+
+incidents:
+  - id: ksqldb-6854
+    source: github_issue
+    engine: ksqldb
+    diagnostic: D7
+    condition: 7
+    title: "Negative SUM aggregate of positive values"
+    url: https://github.com/confluentinc/ksql/issues/6854
+    date: 2021-01
+    status: open
+    # Re-checked 2026-09-03 against the ticket: it is still OPEN, no maintainer
+    # diagnosed a root cause, and the reporter states the symptom disappeared
+    # after recreating the environment. The earlier summary asserted a
+    # maintainer confirmation and a retract-then-apply cause that the thread
+    # does not establish, so both claims are withdrawn. Retained as a
+    # supporting report only; the representative C7 witness is risingwave-23411,
+    # which is diagnosed and fixed.
+    summary: "A user reports a KTable SUM over strictly positive values holding a negative total. Still open and undiagnosed; the reporter notes the symptom did not recur after rebuilding the environment. Retained as a report of the symptom, not as evidence of a specific retraction mechanism."
+    confirmed_by: "SA 2026-07-30; re-checked 2026-09-03"
+  - id: risingwave-21668
+    source: github_issue
+    engine: risingwave
+    diagnostic: D2
+    condition: 2
+    title: "Double insert on downstream due to order key mismatch"
+    url: https://github.com/risingwavelabs/risingwave/issues/21668
+    date: 2025-04
+    status: fixed
+    summary: "An UPDATE's retraction/insert (U-/U+) delta pair was split across the wrong distribution key and re-shuffled out of order (U+ before U-), producing a spurious double-insert / inconsistent aggregate, an internal changelog-ordering violation, not input duplication. (Developer-introduced regression, reverted in #21687.)"
+    confirmed_by: "SA 2026-07-30"
+  - id: spark-54378
+    source: github_issue
+    engine: spark
+    diagnostic: D1
+    condition: 1
+    title: "dropDuplicates and Window dedup produce incorrect results with SPJ partiallyClusteredDistribution"
+    url: https://github.com/apache/spark/issues/54378
+    date: 2026-02
+    # Verified 2026-09-03: the GitHub issue was auto-closed as "not planned"
+    # (stale bot). Re-checked 2026-11-02: the defect was tracked and fixed
+    # under Apache JIRA SPARK-55848 ("SPJ partial clustering produces
+    # incorrect results for post-join dropDuplicates and Window dedup
+    # operations"), Resolved/Fixed, priority Blocker, affects 3.4.4, 3.5.8,
+    # 4.0.2, 4.1.1; fix versions 3.5.9, 4.0.3, 4.1.2, 4.2.0.
+    status: fixed
+    fix_tracker: https://issues.apache.org/jira/browse/SPARK-55848
+    summary: "With SPJ partial clustering enabled, Spark omits the shuffle needed before dropDuplicates()/row_number() dedup, so each split deduplicates locally and duplicate keys survive globally. The reproducer shows inflated output counts, making this a true duplicate-suppression correctness bug."
+    confirmed_by: "SA 2026-07-30"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Duplicate suppression"
+    paper_label: "Spark \\#54378"
+    paper_text: "Partially clustered SPJ omits the shuffle before \\texttt{dropDuplicates}, so each split dedupes locally and duplicate keys survive globally."
+  - id: feldera-4136
+    source: github_issue
+    engine: feldera
+    diagnostic: D3
+    condition: 3
+    title: "[SQL] FP aggregation is never linear"
+    url: https://github.com/feldera/feldera/issues/4136
+    date: 2025-06
+    status: fixed
+    summary: "Feldera treated floating-point linear aggregates as algebraically reversible, but a+b-a-b is not always zero in FP arithmetic. This could leave incorrect nonzero aggregate state for empty collections, making it a true floating-point aggregation correctness bug."
+    confirmed_by: "SA 2026-07-30"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Exact aggregation"
+    paper_label: "Feldera \\#4136"
+    paper_text: "Floating-point linear aggregates were treated as algebraically reversible; $a+b-a-b \\neq 0$ leaves nonzero state for empty collections."
+  - id: ksqldb-6493
+    source: github_issue
+    engine: ksqldb
+    diagnostic: D7
+    condition: 7
+    title: "Query upgrades: Changing the filter on a table can result in missed tombstones"
+    url: https://github.com/confluentinc/ksql/issues/6493
+    date: 2020-10
+    status: open
+    summary: "After CREATE OR REPLACE adds a table filter, ksqlDB can fail to emit tombstones for rows that no longer satisfy the filter, leaving stale rows in the result table. Maintainers agree the ideal semantics require deletion/retraction, making this a retraction-consistency bug."
+    confirmed_by: "SA 2026-07-30"
+  - id: risingwave-23411
+    source: github_issue
+    engine: risingwave
+    diagnostic: D7
+    condition: 7
+    title: "RisingWave Returns Duplicate Records When Reading Iceberg Tables with Delete Files"
+    url: https://github.com/risingwavelabs/risingwave/issues/23411
+    date: 2025-10
+    status: fixed
+    summary: "RisingWave failed to apply Iceberg equality/position delete files correctly, so stale deleted rows remained visible and queries returned duplicate primary-key records. Other engines returned the corrected single-row result, making this a true delete/retraction-consistency bug."
+    confirmed_by: "SA 2026-07-30; re-checked 2026-09-03"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Retraction consistency"
+    paper_label: "RisingWave \\#23411"
+    paper_text: "Equality and position delete files are not applied, so superseded rows stay visible and a primary key returns duplicate records."
+  - id: risingwave-14900
+    source: github_issue
+    engine: risingwave
+    diagnostic: D6
+    condition: 6
+    title: "Two phase topn batch plan generation is incorrect when input is singleton"
+    url: https://github.com/risingwavelabs/risingwave/issues/14900
+    date: 2024-01
+    status: fixed
+    # Re-checked 2026-09-03: the ticket is a BATCH planning defect. The planner
+    # rewrote "offset 50, limit 50" as "offset 0, limit 100" for a singleton
+    # input, so the ranking returned is not the requested window. It witnesses
+    # C6 as written -- a downstream ranking over a maintained view that does not
+    # follow the declared order -- but it is not evidence about incremental
+    # top-N maintenance, and the wording below no longer implies that.
+    summary: "Two-phase top-N planning over a materialized view rewrote the requested offset and limit, emitting offset 0 limit 100 in place of offset 50 limit 50 for a singleton input, so the ranking returned was not the requested window. Batch planning defect, not incremental maintenance."
+    confirmed_by: "SA 2026-07-30; re-checked 2026-09-03"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Top-$k$ ranking"
+    paper_label: "RisingWave \\#14900"
+    paper_text: "Two-phase top-$N$ planning over a maintained view rewrites the requested offset and limit, so the ranking returned is not the declared window. Batch planning, not incremental maintenance."
+  - id: flink-35886
+    source: jira
+    engine: flink
+    diagnostic: D4
+    condition: 4
+    title: "Watermark idleness incorrectly triggered when a subtask is backpressured/blocked"
+    url: https://issues.apache.org/jira/browse/FLINK-35886
+    date: 2024-07
+    status: fixed
+    summary: "Flink incorrectly counted backpressured/blocked source time toward watermark idleness, so a split could be marked idle while it still had records to emit. The combined watermark could then advance too far and cause valid records from that split to be dropped as late, making this a true watermark/lateness correctness bug."
+    confirmed_by: "SA 2026-07-30"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Lateness"
+    paper_label: "FLINK-35886"
+    paper_text: "Backpressured source time counts toward watermark idleness, so the watermark over-advances and valid records are dropped as late."
+  - id: flink-34063
+    source: jira
+    engine: flink
+    diagnostic: D5
+    condition: 5
+    title: "Snapshot compression + rescale loses source splits on recovery"
+    url: https://issues.apache.org/jira/browse/FLINK-34063
+    date: 2024-01
+    status: fixed
+    summary: "With snapshot compression enabled, Flink could corrupt operator-state offsets during checkpoint/savepoint restore with source rescaling, causing Kafka source splits to be duplicated or lost. After recovery, some partitions were no longer consumed, making this a true post-recovery state/data-loss bug."
+    confirmed_by: "SA 2026-07-30"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Recovery equivalence"
+    paper_label: "FLINK-34063"
+    paper_text: "Compressed-snapshot restore with source rescaling corrupts operator-state offsets; some partitions are no longer consumed after recovery."
+  - id: kafka-9891
+    source: jira
+    engine: ksqldb
+    diagnostic: D5
+    condition: 5
+    title: "Invalid state store content after task migration with exactly_once and standby replicas"
+    url: https://issues.apache.org/jira/browse/KAFKA-9891
+    date: 2020-04
+    status: fixed
+    summary: "In Kafka Streams, the runtime underneath ksqlDB, task migration with exactly_once and standby replicas could restore invalid local state after an aborted transaction. The state store then falsely detected a duplicate command and skipped processing, making this a true post-recovery state-equivalence bug."
+    confirmed_by: "SA 2026-07-30"
+  - id: kafka-10493
+    source: jira
+    engine: ksqldb
+    diagnostic: D2
+    condition: 2
+    title: "KTable out-of-order updates are not being ignored"
+    url: https://issues.apache.org/jira/browse/KAFKA-10493
+    date: 2020-09
+    status: wontfix
+    summary: "In Kafka Streams, the runtime underneath ksqlDB, materialized KTables did not ignore older out-of-order updates for a key; instead they updated local state and forwarded the stale value downstream. This makes table state depend on arrival order, so it is true D2 evidence. Resolved Won't Fix and superseded by KAFKA-14491, which adds versioned key-value stores."
+    confirmed_by: "SA 2026-07-30"
+    # -- paper-facing (Tab 11). This entry is the REPRESENTATIVE witness for
+    #    its Lemma-1 condition; scripts/figures/tab_11_witnesses.py renders the
+    #    three fields below verbatim, so they are LaTeX-ready by design.
+    representative: true
+    condition_name: "Order independence"
+    # Label names the ENGINE UNDER TEST first, then the ticket. The ticket is
+    # filed against Kafka Streams because that is the runtime ksqlDB compiles its
+    # queries onto -- a Kafka Streams KTable bug is a ksqlDB bug. A bare
+    # "KAFKA-10493" made readers ask why Kafka, which we do not benchmark,
+    # appears in a table of engines we do.
+    paper_label: "ksqlDB: KAFKA-10493"
+    paper_text: "A materialized \\textsc{KTable} applies older out-of-order updates instead of ignoring them, making table state depend on arrival order. Filed against Kafka Streams, the runtime beneath ksqlDB."

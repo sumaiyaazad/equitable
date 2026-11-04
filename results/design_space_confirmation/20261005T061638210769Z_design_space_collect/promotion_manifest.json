@@ -1,0 +1,14 @@
+{
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "block": "design_space_confirmation",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "files_sha256": {
+    "design_space.csv": "ddfe83aedfd32c7c9a81bfb829f3897634ee376438f9ff2b00e7313f1a3579df",
+    "summary.json": "54c888561536a2de5698d6d7242555d29b821197c88d2c4a8df20e99dbe87fa0"
+  },
+  "finalizer_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "invocation_id": "benchmark_20261002T213200Z_confirm1m",
+  "promoted_utc": "2026-10-05T18:23:23Z",
+  "source_run": "runs/20261005T061638210769Z_design_space_collect"
+}

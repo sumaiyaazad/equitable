@@ -1,0 +1,250 @@
+==== detection power : environment_airquality (rows<=50000) ====
+  mutant_no_dedup            D1   <-target CAUGHT
+  mutant_no_dedup            D2            quiet
+  mutant_no_dedup            D3            quiet
+  mutant_no_dedup            D4            quiet
+  mutant_no_dedup            D5            collateral
+  mutant_no_dedup            D6            quiet
+  mutant_no_dedup            D7            collateral
+  mutant_order_sensitive     D1            collateral
+  mutant_order_sensitive     D2   <-target CAUGHT
+  mutant_order_sensitive     D3            quiet
+  mutant_order_sensitive     D4            collateral
+  mutant_order_sensitive     D5            collateral
+  mutant_order_sensitive     D6            quiet
+  mutant_order_sensitive     D7            collateral
+  mutant_ulp_drift           D1            quiet
+  mutant_ulp_drift           D2            quiet
+  mutant_ulp_drift           D3   <-target CAUGHT
+  mutant_ulp_drift           D4            quiet
+  mutant_ulp_drift           D5            collateral
+  mutant_ulp_drift           D6            quiet
+  mutant_ulp_drift           D7            quiet
+  mutant_drop_late           D1            quiet
+  mutant_drop_late           D2            collateral
+  mutant_drop_late           D3            quiet
+  mutant_drop_late           D4   <-target CAUGHT
+  mutant_drop_late           D5            collateral
+  mutant_drop_late           D6            quiet
+  mutant_drop_late           D7            collateral
+  mutant_ignore_supersedes   D1            quiet
+  mutant_ignore_supersedes   D2            quiet
+  mutant_ignore_supersedes   D3            quiet
+  mutant_ignore_supersedes   D4            quiet
+  mutant_ignore_supersedes   D5            collateral
+  mutant_ignore_supersedes   D6            quiet
+  mutant_ignore_supersedes   D7   <-target CAUGHT
+  mutant_recovery_loss       D1            quiet
+  mutant_recovery_loss       D2            quiet
+  mutant_recovery_loss       D3            quiet
+  mutant_recovery_loss       D4            quiet
+  mutant_recovery_loss       D5   <-target CAUGHT
+  mutant_recovery_loss       D6            quiet
+  mutant_recovery_loss       D7            quiet
+  mutant_topk_rank           D1            quiet
+  mutant_topk_rank           D2            quiet
+  mutant_topk_rank           D3            quiet
+  mutant_topk_rank           D4            quiet
+  mutant_topk_rank           D5            collateral
+  mutant_topk_rank           D6   <-target CAUGHT
+  mutant_topk_rank           D7            quiet
+==== detection power : transportation_taxi (rows<=50000) ====
+  mutant_no_dedup            D1   <-target CAUGHT
+  mutant_no_dedup            D2            quiet
+  mutant_no_dedup            D3            quiet
+  mutant_no_dedup            D4            quiet
+  mutant_no_dedup            D5            collateral
+  mutant_no_dedup            D6            quiet
+  mutant_no_dedup            D7            collateral
+  mutant_order_sensitive     D1            collateral
+  mutant_order_sensitive     D2   <-target CAUGHT
+  mutant_order_sensitive     D3            quiet
+  mutant_order_sensitive     D4            collateral
+  mutant_order_sensitive     D5            collateral
+  mutant_order_sensitive     D6            quiet
+  mutant_order_sensitive     D7            collateral
+  mutant_ulp_drift           D1            quiet
+  mutant_ulp_drift           D2            quiet
+  mutant_ulp_drift           D3   <-target CAUGHT
+  mutant_ulp_drift           D4            quiet
+  mutant_ulp_drift           D5            collateral
+  mutant_ulp_drift           D6            quiet
+  mutant_ulp_drift           D7            quiet
+  mutant_drop_late           D1            quiet
+  mutant_drop_late           D2            collateral
+  mutant_drop_late           D3            quiet
+  mutant_drop_late           D4   <-target CAUGHT
+  mutant_drop_late           D5            collateral
+  mutant_drop_late           D6            quiet
+  mutant_drop_late           D7            collateral
+  mutant_ignore_supersedes   D1            quiet
+  mutant_ignore_supersedes   D2            quiet
+  mutant_ignore_supersedes   D3            quiet
+  mutant_ignore_supersedes   D4            quiet
+  mutant_ignore_supersedes   D5            collateral
+  mutant_ignore_supersedes   D6            quiet
+  mutant_ignore_supersedes   D7   <-target CAUGHT
+  mutant_recovery_loss       D1            quiet
+  mutant_recovery_loss       D2            quiet
+  mutant_recovery_loss       D3            quiet
+  mutant_recovery_loss       D4            quiet
+  mutant_recovery_loss       D5   <-target CAUGHT
+  mutant_recovery_loss       D6            quiet
+  mutant_recovery_loss       D7            quiet
+  mutant_topk_rank           D1            quiet
+  mutant_topk_rank           D2            quiet
+  mutant_topk_rank           D3            quiet
+  mutant_topk_rank           D4            quiet
+  mutant_topk_rank           D5            collateral
+  mutant_topk_rank           D6   <-target CAUGHT
+  mutant_topk_rank           D7            quiet
+==== detection power : datacenter_drives (rows<=50000) ====
+  mutant_no_dedup            D1   <-target CAUGHT
+  mutant_no_dedup            D2            quiet
+  mutant_no_dedup            D3            quiet
+  mutant_no_dedup            D4            quiet
+  mutant_no_dedup            D5            collateral
+  mutant_no_dedup            D6            quiet
+  mutant_no_dedup            D7            collateral
+  mutant_order_sensitive     D1            quiet
+  mutant_order_sensitive     D2   <-target CAUGHT
+  mutant_order_sensitive     D3            quiet
+  mutant_order_sensitive     D4            collateral
+  mutant_order_sensitive     D5            collateral
+  mutant_order_sensitive     D6            quiet
+  mutant_order_sensitive     D7            quiet
+  mutant_ulp_drift           D1            quiet
+  mutant_ulp_drift           D2            quiet
+  mutant_ulp_drift           D3   <-target CAUGHT
+  mutant_ulp_drift           D4            quiet
+  mutant_ulp_drift           D5            collateral
+  mutant_ulp_drift           D6            quiet
+  mutant_ulp_drift           D7            quiet
+  mutant_drop_late           D1            quiet
+  mutant_drop_late           D2            collateral
+  mutant_drop_late           D3            quiet
+  mutant_drop_late           D4   <-target CAUGHT
+  mutant_drop_late           D5            collateral
+  mutant_drop_late           D6            quiet
+  mutant_drop_late           D7            collateral
+  mutant_ignore_supersedes   D1            quiet
+  mutant_ignore_supersedes   D2            quiet
+  mutant_ignore_supersedes   D3            quiet
+  mutant_ignore_supersedes   D4            quiet
+  mutant_ignore_supersedes   D5            collateral
+  mutant_ignore_supersedes   D6            quiet
+  mutant_ignore_supersedes   D7   <-target CAUGHT
+  mutant_recovery_loss       D1            quiet
+  mutant_recovery_loss       D2            quiet
+  mutant_recovery_loss       D3            quiet
+  mutant_recovery_loss       D4            quiet
+  mutant_recovery_loss       D5   <-target CAUGHT
+  mutant_recovery_loss       D6            quiet
+  mutant_recovery_loss       D7            quiet
+  mutant_topk_rank           D1            quiet
+  mutant_topk_rank           D2            quiet
+  mutant_topk_rank           D3            quiet
+  mutant_topk_rank           D4            quiet
+  mutant_topk_rank           D5            collateral
+  mutant_topk_rank           D6   <-target CAUGHT
+  mutant_topk_rank           D7            quiet
+==== detection power : finance_markets (rows<=50000) ====
+  mutant_no_dedup            D1   <-target CAUGHT
+  mutant_no_dedup            D2            quiet
+  mutant_no_dedup            D3            quiet
+  mutant_no_dedup            D4            quiet
+  mutant_no_dedup            D5            collateral
+  mutant_no_dedup            D6            quiet
+  mutant_no_dedup            D7            collateral
+  mutant_order_sensitive     D1            collateral
+  mutant_order_sensitive     D2   <-target CAUGHT
+  mutant_order_sensitive     D3            quiet
+  mutant_order_sensitive     D4            collateral
+  mutant_order_sensitive     D5            collateral
+  mutant_order_sensitive     D6            quiet
+  mutant_order_sensitive     D7            collateral
+  mutant_ulp_drift           D1            quiet
+  mutant_ulp_drift           D2            quiet
+  mutant_ulp_drift           D3   <-target CAUGHT
+  mutant_ulp_drift           D4            quiet
+  mutant_ulp_drift           D5            collateral
+  mutant_ulp_drift           D6            quiet
+  mutant_ulp_drift           D7            quiet
+  mutant_drop_late           D1            quiet
+  mutant_drop_late           D2            collateral
+  mutant_drop_late           D3            quiet
+  mutant_drop_late           D4   <-target CAUGHT
+  mutant_drop_late           D5            collateral
+  mutant_drop_late           D6            quiet
+  mutant_drop_late           D7            collateral
+  mutant_ignore_supersedes   D1            quiet
+  mutant_ignore_supersedes   D2            quiet
+  mutant_ignore_supersedes   D3            quiet
+  mutant_ignore_supersedes   D4            quiet
+  mutant_ignore_supersedes   D5            collateral
+  mutant_ignore_supersedes   D6            quiet
+  mutant_ignore_supersedes   D7   <-target CAUGHT
+  mutant_recovery_loss       D1            quiet
+  mutant_recovery_loss       D2            quiet
+  mutant_recovery_loss       D3            quiet
+  mutant_recovery_loss       D4            quiet
+  mutant_recovery_loss       D5   <-target CAUGHT
+  mutant_recovery_loss       D6            quiet
+  mutant_recovery_loss       D7            quiet
+  mutant_topk_rank           D1            quiet
+  mutant_topk_rank           D2            quiet
+  mutant_topk_rank           D3            quiet
+  mutant_topk_rank           D4            quiet
+  mutant_topk_rank           D5            collateral
+  mutant_topk_rank           D6   <-target CAUGHT
+  mutant_topk_rank           D7            quiet
+==== detection power : sports_football (rows<=50000) ====
+  mutant_no_dedup            D1   <-target CAUGHT
+  mutant_no_dedup            D2            quiet
+  mutant_no_dedup            D3            quiet
+  mutant_no_dedup            D4            quiet
+  mutant_no_dedup            D5            collateral
+  mutant_no_dedup            D6            quiet
+  mutant_no_dedup            D7            collateral
+  mutant_order_sensitive     D1            quiet
+  mutant_order_sensitive     D2   <-target CAUGHT
+  mutant_order_sensitive     D3            quiet
+  mutant_order_sensitive     D4            collateral
+  mutant_order_sensitive     D5            collateral
+  mutant_order_sensitive     D6            quiet
+  mutant_order_sensitive     D7            collateral
+  mutant_ulp_drift           D1            quiet
+  mutant_ulp_drift           D2            quiet
+  mutant_ulp_drift           D3   <-target CAUGHT
+  mutant_ulp_drift           D4            quiet
+  mutant_ulp_drift           D5            collateral
+  mutant_ulp_drift           D6            quiet
+  mutant_ulp_drift           D7            quiet
+  mutant_drop_late           D1            quiet
+  mutant_drop_late           D2            quiet
+  mutant_drop_late           D3            quiet
+  mutant_drop_late           D4   <-target CAUGHT
+  mutant_drop_late           D5            collateral
+  mutant_drop_late           D6            quiet
+  mutant_drop_late           D7            quiet
+  mutant_ignore_supersedes   D1            quiet
+  mutant_ignore_supersedes   D2            quiet
+  mutant_ignore_supersedes   D3            quiet
+  mutant_ignore_supersedes   D4            quiet
+  mutant_ignore_supersedes   D5            collateral
+  mutant_ignore_supersedes   D6            quiet
+  mutant_ignore_supersedes   D7   <-target CAUGHT
+  mutant_recovery_loss       D1            quiet
+  mutant_recovery_loss       D2            quiet
+  mutant_recovery_loss       D3            quiet
+  mutant_recovery_loss       D4            quiet
+  mutant_recovery_loss       D5   <-target CAUGHT
+  mutant_recovery_loss       D6            quiet
+  mutant_recovery_loss       D7            quiet
+  mutant_topk_rank           D1            quiet
+  mutant_topk_rank           D2            quiet
+  mutant_topk_rank           D3            quiet
+  mutant_topk_rank           D4            quiet
+  mutant_topk_rank           D5            collateral
+  mutant_topk_rank           D6   <-target CAUGHT
+  mutant_topk_rank           D7            quiet

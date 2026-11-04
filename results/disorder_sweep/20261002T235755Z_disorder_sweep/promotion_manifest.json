@@ -1,0 +1,14 @@
+{
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "block": "disorder_sweep",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "files_sha256": {
+    "disorder_sweep.csv": "794cb2f922c9c708ac6a96ae507fdab2385d4a28a3212de97656475429709f5a",
+    "summary.json": "a67d84fee07afc8bee18634a9749d1c84162e6193d7bffba249bb39022e6611a"
+  },
+  "finalizer_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "invocation_id": "benchmark_20261002T213200Z_validation",
+  "promoted_utc": "2026-10-05T18:23:36Z",
+  "source_run": "runs/20261002T235755Z_disorder_sweep"
+}

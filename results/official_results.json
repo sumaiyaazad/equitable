@@ -1,0 +1,93 @@
+{
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "benchmark_run_id": "benchmark_20261002T213200Z",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "machine": "x86_64",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "promotions": [
+    {
+      "block": "boundary",
+      "manifest_sha256": "8862e44c660f60138e936fe0e863856fdcd6304e2bcb251bb17662cd02a5811a",
+      "run_id": "20261002T215412Z_boundary"
+    },
+    {
+      "block": "d7s_sweep",
+      "manifest_sha256": "7a08a343810dbdda7a108562869b9cef61b566de3d57c698cc61a5fb14944b20",
+      "run_id": "20261002T222337Z_all_reference_d7s_sweep"
+    },
+    {
+      "block": "design_space",
+      "manifest_sha256": "0c3043f04065b15c8afb6fdb09fbe80026b7f71bee083d19219c7754021165a7",
+      "run_id": "20261005T061532277614Z_design_space_collect"
+    },
+    {
+      "block": "design_space_confirmation",
+      "manifest_sha256": "91cc5270861e642be49022b09205f6c6f99eb47262eb3ce19012c630087c7280",
+      "run_id": "20261005T061638210769Z_design_space_collect"
+    },
+    {
+      "block": "disorder_sweep",
+      "manifest_sha256": "c6f33a51a296d017bfa321362950b5058560ddf78a2a8f9249f37e6699c10f66",
+      "run_id": "20261002T235755Z_disorder_sweep"
+    },
+    {
+      "block": "formulation_cost",
+      "manifest_sha256": "736a3fa2ab74dc919b2e9c942d8376f0c1c12d603a9c39c1493abed0d4e731e5",
+      "run_id": "20261003T005903Z_formulation_cost"
+    },
+    {
+      "block": "mutation",
+      "manifest_sha256": "3f4c0fb55881d7e6bde531fa80fa374c4bbbe284962acf8390e5d5cd521db6f9",
+      "run_id": "20261002T215643Z_all_mutants_detection"
+    },
+    {
+      "block": "native_semantics",
+      "manifest_sha256": "564c7365f00d2c1c90ec1ad4ac81b007241065244d59d5e3781593b387764418",
+      "run_id": "20261002T215413059424Z_all_native_semantics"
+    },
+    {
+      "block": "oracle_verification",
+      "manifest_sha256": "d8f770e7a1e0c05f76a12827d5db756d6d5101f89f089b1522cc4c0ca98058ee",
+      "run_id": "20261002T214604175763Z_oracle_verification_sports_football"
+    },
+    {
+      "block": "oracle_verification",
+      "manifest_sha256": "54d34ed3c5f88651b06c3024e128989e73c4ca53e1b2416c7070a17799b6cc4c",
+      "run_id": "20261002T214609769142Z_oracle_verification_finance_markets"
+    },
+    {
+      "block": "oracle_verification",
+      "manifest_sha256": "fd2460f4a775e8cdbc3a1be944dde1415e20e9936f15290b2772a9e5a7521dd9",
+      "run_id": "20261002T214619296102Z_oracle_verification_transportation_taxi"
+    },
+    {
+      "block": "oracle_verification",
+      "manifest_sha256": "7a241eb4ed9307f57a30a27eccc028efe6583ddb3a57e9ba25a5e5f4569ff70b",
+      "run_id": "20261002T214637421141Z_oracle_verification_environment_airquality"
+    },
+    {
+      "block": "oracle_verification",
+      "manifest_sha256": "a609ef81a6b0dac1f222bdbd8ff23e78e39734f514d2b159d68119f6441cc0fc",
+      "run_id": "20261002T214700270348Z_oracle_verification_datacenter_drives"
+    },
+    {
+      "block": "parallelism_sweep",
+      "manifest_sha256": "0918cdb2b4fd37faedc3ac6b7b857cda9a4258c0474d3f3bf5c6e6433750e511",
+      "run_id": "20261003T004154Z_parallelism_sweep"
+    },
+    {
+      "block": "query_family",
+      "manifest_sha256": "266d1187235d78307504c3f27b6454a32585eeb68e622f13660d59375a977b9e",
+      "run_id": "20261002T223330Z_query_family"
+    },
+    {
+      "block": "scaling",
+      "manifest_sha256": "501f403a54521b68317b2fdd9e7d055e2483c9d1910204a799c0d078681e58a7",
+      "run_id": "20261005T061744226858Z_scaling_collect"
+    }
+  ],
+  "python_version": "3.12.12",
+  "schema_version": 1,
+  "source_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468"
+}

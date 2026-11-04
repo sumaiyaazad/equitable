@@ -1,0 +1,48 @@
+{
+  "domain": "transportation_taxi",
+  "source": "NYC TLC yellow-taxi trip records (d37ci6vzurychx.cloudfront.net)",
+  "rows": 1000000,
+  "entities": 252,
+  "metrics": [
+    "duration",
+    "fare",
+    "trip_distance"
+  ],
+  "sha256": "a44902535932131d3228c6ed44c08788a4bcd7faae0816fb4fe09942be302f94",
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "contract_version": 2,
+  "dedupe_identity": "source_observation",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "written_utc": "2026-10-02T21:34:40Z",
+  "log_path": "data/normalized/transportation_taxi/log.parquet",
+  "rows_before_cap": 10281780,
+  "selection": "uniform 1000000 evenly spaced by (event_time_utc, dedupe_id)",
+  "mode": "from_raw",
+  "window": [
+    "2024-06",
+    "2024-06"
+  ],
+  "months_ok": 1,
+  "months_missing": 0,
+  "time_basis": "TLC wall-clock localized to America/New_York then converted to UTC; ambiguous/nonexistent DST times rejected",
+  "input_sha256": "6740a4873b00deb9979d434b794402ef6e78a27d7316fbd289c42ea66290b38d",
+  "input_file_count": 1,
+  "input_files": [
+    {
+      "name": "yellow_tripdata_2024-06.parquet",
+      "sha256": "677cf14c8347f745b583f012fbdba072334c6c4efa17bfd6a64369f2ba30329c",
+      "bytes": 59859922
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "domain": "environment_airquality",
+  "base_log": "data/normalized/environment_airquality/log.parquet",
+  "base_sha256": "3a837b49e6f80b976c537322c474793be06dfc11683342b8238244f6eb877398",
+  "base_rows": 1000000,
+  "seed": 1337,
+  "config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "domain_config": "config/domains/environment_airquality.yaml",
+  "rates": {
+    "duplicate_rate": 0.005,
+    "reorder_window": 100,
+    "late_rate": 0.002,
+    "late_window": 50000,
+    "allowed_lateness_s": 3600,
+    "restate_rate": 0.01,
+    "restate_window": 5000
+  },
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "dedupe_identity": "source_observation",
+  "contract_version": 2,
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "invocation_id": "benchmark_20261002T213200Z_prepare",
+  "campaign_id": "benchmark_20261002T213200Z",
+  "campaign_phase": "prepare",
+  "repeat_index": 0,
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "python_version": "3.12.12",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 16,
+  "memory_bytes": 135062691840,
+  "disk_total_bytes": 418916810752,
+  "written_utc": "2026-10-02T21:36:30Z",
+  "fixtures": [
+    {
+      "diagnostic": "D1",
+      "name": "d1_dup.parquet",
+      "sha256": "9b2cde433a20271f8ea94de645b42847c2b3e3dbe2ced02c2ea0c89bfe9c1511",
+      "rows": 1005000,
+      "perturbation": "duplicate",
+      "rate": 0.005,
+      "window": 2000,
+      "injected_duplicates": 5000
+    },
+    {
+      "diagnostic": "D2",
+      "name": "d2_reorder.parquet",
+      "sha256": "184260417b4232e2a3a7dc27f2f3968c73b7a40161b79d1ec7800f3402eebb82",
+      "rows": 1000000,
+      "perturbation": "bounded_reorder",
+      "reorder_window": 100,
+      "reorder_mode": "event_time",
+      "event_time_inversion_rate": 0.494999494999495,
+      "distinct_event_times": 1340
+    },
+    {
+      "diagnostic": "D4",
+      "name": "d4_late.parquet",
+      "sha256": "081c07bdf1dcc08802aa8f78d9dde498d02c2443f49a658741ba1c251639c627",
+      "rows": 1000000,
+      "perturbation": "late_arrival",
+      "rate": 0.002,
+      "late_window": 50000,
+      "late_rows": 2000,
+      "allowed_lateness_s": 3600,
+      "control_order": "event_time_utc,dedupe_id",
+      "injected_target_ids_sha256": "359aa958d771d93054eca252f97f7b06f795a3b39409a172fe34de4992160e19",
+      "event_time_inversion_rate": 0.001941001941001941,
+      "behind_watermark": 1973,
+      "behind_watermark_first_50k": 91,
+      "control_beyond_allowed_lateness": 0,
+      "control_beyond_allowed_lateness_at_50k": 0,
+      "beyond_allowed_lateness": 1923,
+      "beyond_allowed_lateness_at_50k": 91,
+      "injected_targets_present_at_50k": 91,
+      "injected_beyond_allowed_lateness_at_50k": 91,
+      "net_beyond_allowed_lateness_at_50k": 91,
+      "scale_selection": "uniform_full_log",
+      "scale_checks": {
+        "10000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 21,
+          "net_beyond_allowed_lateness": 21,
+          "injected_targets_present": 24,
+          "injected_beyond_allowed_lateness": 21
+        },
+        "50000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 91,
+          "net_beyond_allowed_lateness": 91,
+          "injected_targets_present": 91,
+          "injected_beyond_allowed_lateness": 91
+        },
+        "200000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 387,
+          "net_beyond_allowed_lateness": 387,
+          "injected_targets_present": 392,
+          "injected_beyond_allowed_lateness": 387
+        },
+        "500000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 943,
+          "net_beyond_allowed_lateness": 943,
+          "injected_targets_present": 981,
+          "injected_beyond_allowed_lateness": 943
+        },
+        "1000000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 1923,
+          "net_beyond_allowed_lateness": 1923,
+          "injected_targets_present": 2000,
+          "injected_beyond_allowed_lateness": 1923
+        }
+      }
+    },
+    {
+      "diagnostic": "D7",
+      "name": "d7_restate.parquet",
+      "sha256": "bfc234031b44364e7752624b3d367a28eaa3b9d24951c6c6f74c9c8c21cfe2e9",
+      "rows": 1010000,
+      "perturbation": "restatement",
+      "rate": 0.01,
+      "restate_window": 5000,
+      "restatements": 10000,
+      "base_observations": 1000000,
+      "alpha": 0.01
+    }
+  ],
+  "self_check": "PASS"
+}

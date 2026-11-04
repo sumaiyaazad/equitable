@@ -1,0 +1,50 @@
+{
+  "domain": "datacenter_drives",
+  "source": "Backblaze Drive Stats (data_Q2_2024.zip)",
+  "rows": 1000000,
+  "entities": 209566,
+  "metrics": [
+    "power_on_hours",
+    "realloc_sectors",
+    "temperature"
+  ],
+  "sha256": "5b1d3e2434b415023cbb081fdf8d5de55cebc57eb183e7b7bf2afa90c1e96a55",
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "contract_version": 2,
+  "dedupe_identity": "source_observation",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "written_utc": "2026-10-02T21:33:16Z",
+  "log_path": "data/normalized/datacenter_drives/log.parquet",
+  "rows_before_cap": 25732132,
+  "selection": "uniform 1000000 evenly spaced by (event_time_utc, dedupe_id)",
+  "mode": "from_zip",
+  "zip": "../../../data/raw/datacenter_drives/data_Q2_2024.zip",
+  "month": "2024-06",
+  "days_scanned": 30,
+  "days_kept": 30,
+  "source_preselection": {
+    "method": "lowest pandas uint64 hash(serial_number|date) per day",
+    "raw_records_per_day": 12223,
+    "days": 30
+  },
+  "input_sha256": "7d1c99508c5d9328e47940a45d233e07a3423b91a88933ce5c39d2ab70c7578f",
+  "input_file_count": 1,
+  "input_files": [
+    {
+      "name": "data_Q2_2024.zip",
+      "sha256": "3fb91aeb4f6e19ea5be53ba87d1e077a250f4fc476c3b42a4973432cd4d54155",
+      "bytes": 1020665037
+    }
+  ]
+}

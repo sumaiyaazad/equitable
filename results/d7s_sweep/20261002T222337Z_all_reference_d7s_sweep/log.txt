@@ -1,0 +1,95 @@
+==== D7S sweep : environment_airquality (rows<=200000) ====
+  alpha=0.001  k=64   restate=200    groups=16  io_qer=0.021 bd_qer=0.021 io_excess=0.01298 bd_excess=0.01298 
+  alpha=0.001  k=200  restate=200    groups=16  io_qer=0.000 bd_qer=0.000 io_excess=0.00332 bd_excess=0.00332 
+  alpha=0.001  k=800  restate=200    groups=16  io_qer=0.021 bd_qer=0.021 io_excess=0.01400 bd_excess=0.01400 
+  alpha=0.01   k=64   restate=2000   groups=16  io_qer=0.042 bd_qer=0.042 io_excess=0.01730 bd_excess=0.01730 
+  alpha=0.01   k=200  restate=2000   groups=16  io_qer=0.000 bd_qer=0.000 io_excess=0.00829 bd_excess=0.00829 
+  alpha=0.01   k=800  restate=2000   groups=16  io_qer=0.000 bd_qer=0.000 io_excess=0.00118 bd_excess=0.00118 
+  alpha=0.05   k=64   restate=10000  groups=16  io_qer=0.062 bd_qer=0.083 io_excess=0.01075 bd_excess=0.02180 
+  alpha=0.05   k=200  restate=10000  groups=16  io_qer=0.021 bd_qer=0.021 io_excess=0.01262 bd_excess=0.01262 
+  alpha=0.05   k=800  restate=10000  groups=16  io_qer=0.000 bd_qer=0.000 io_excess=0.00811 bd_excess=0.00070 
+  alpha=0.1    k=64   restate=20000  groups=16  io_qer=0.083 bd_qer=0.062 io_excess=0.04286 bd_excess=0.01436 
+  alpha=0.1    k=200  restate=20000  groups=16  io_qer=0.042 bd_qer=0.021 io_excess=0.04286 bd_excess=0.01466 
+  alpha=0.1    k=800  restate=20000  groups=16  io_qer=0.042 bd_qer=0.000 io_excess=0.04286 bd_excess=0.00103 SEPARATES
+  alpha=0.25   k=64   restate=50000  groups=16  io_qer=0.062 bd_qer=0.125 io_excess=0.01766 bd_excess=0.01636 
+  alpha=0.25   k=200  restate=50000  groups=16  io_qer=0.062 bd_qer=0.000 io_excess=0.01892 bd_excess=0.00573 SEPARATES
+  alpha=0.25   k=800  restate=50000  groups=16  io_qer=0.062 bd_qer=0.000 io_excess=0.01892 bd_excess=0.00380 SEPARATES
+  alpha=0.5    k=64   restate=100000 groups=16  io_qer=0.125 bd_qer=0.125 io_excess=0.01857 bd_excess=0.02383 
+  alpha=0.5    k=200  restate=100000 groups=16  io_qer=0.062 bd_qer=0.000 io_excess=0.01857 bd_excess=0.00600 SEPARATES
+  alpha=0.5    k=800  restate=100000 groups=16  io_qer=0.104 bd_qer=0.000 io_excess=0.01857 bd_excess=0.00123 SEPARATES
+==== D7S sweep : transportation_taxi (rows<=200000) ====
+  alpha=0.001  k=64   restate=200    groups=18  io_qer=0.037 bd_qer=0.019 io_excess=0.01222 bd_excess=0.01222 
+  alpha=0.001  k=200  restate=200    groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00267 bd_excess=0.00313 
+  alpha=0.001  k=800  restate=200    groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00135 bd_excess=0.00135 
+  alpha=0.01   k=64   restate=2000   groups=18  io_qer=0.000 bd_qer=0.019 io_excess=0.00928 bd_excess=0.01563 
+  alpha=0.01   k=200  restate=2000   groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00582 bd_excess=0.00582 
+  alpha=0.01   k=800  restate=2000   groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00158 bd_excess=0.00753 
+  alpha=0.05   k=64   restate=10000  groups=18  io_qer=0.037 bd_qer=0.056 io_excess=0.01264 bd_excess=0.01714 
+  alpha=0.05   k=200  restate=10000  groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00425 bd_excess=0.00575 
+  alpha=0.05   k=800  restate=10000  groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00213 bd_excess=0.00228 
+  alpha=0.1    k=64   restate=20000  groups=18  io_qer=0.019 bd_qer=0.037 io_excess=0.02827 bd_excess=0.02827 
+  alpha=0.1    k=200  restate=20000  groups=18  io_qer=0.019 bd_qer=0.000 io_excess=0.01380 bd_excess=0.00548 SEPARATES
+  alpha=0.1    k=800  restate=20000  groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00274 bd_excess=0.00151 
+  alpha=0.25   k=64   restate=50000  groups=18  io_qer=0.019 bd_qer=0.056 io_excess=0.01156 bd_excess=0.01087 
+  alpha=0.25   k=200  restate=50000  groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00590 bd_excess=0.00562 
+  alpha=0.25   k=800  restate=50000  groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00379 bd_excess=0.00416 
+  alpha=0.5    k=64   restate=100000 groups=18  io_qer=0.093 bd_qer=0.278 io_excess=0.01811 bd_excess=0.03109 
+  alpha=0.5    k=200  restate=100000 groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00770 bd_excess=0.00759 
+  alpha=0.5    k=800  restate=100000 groups=18  io_qer=0.000 bd_qer=0.000 io_excess=0.00928 bd_excess=0.00235 
+==== D7S sweep : datacenter_drives (rows<=200000) ====
+  alpha=0.001  k=64   restate=200    groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00549 bd_excess=0.00549 
+  alpha=0.001  k=200  restate=200    groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00447 bd_excess=0.00447 
+  alpha=0.001  k=800  restate=200    groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00207 bd_excess=0.00207 
+  alpha=0.01   k=64   restate=2000   groups=19  io_qer=0.018 bd_qer=0.018 io_excess=0.01023 bd_excess=0.01023 
+  alpha=0.01   k=200  restate=2000   groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00434 bd_excess=0.00434 
+  alpha=0.01   k=800  restate=2000   groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00098 bd_excess=0.00053 
+  alpha=0.05   k=64   restate=10000  groups=19  io_qer=0.053 bd_qer=0.053 io_excess=0.04156 bd_excess=0.04156 
+  alpha=0.05   k=200  restate=10000  groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00422 bd_excess=0.00422 
+  alpha=0.05   k=800  restate=10000  groups=19  io_qer=0.000 bd_qer=0.000 io_excess=0.00225 bd_excess=0.00114 
+  alpha=0.1    k=64   restate=20000  groups=19  io_qer=0.018 bd_qer=0.018 io_excess=0.03043 bd_excess=0.01256 
+  alpha=0.1    k=200  restate=20000  groups=19  io_qer=0.035 bd_qer=0.035 io_excess=0.03503 bd_excess=0.03503 
+  alpha=0.1    k=800  restate=20000  groups=19  io_qer=0.018 bd_qer=0.018 io_excess=0.03043 bd_excess=0.03552 
+  alpha=0.25   k=64   restate=50000  groups=19  io_qer=0.105 bd_qer=0.053 io_excess=0.03043 bd_excess=0.01332 
+  alpha=0.25   k=200  restate=50000  groups=19  io_qer=0.211 bd_qer=0.035 io_excess=0.03043 bd_excess=0.02703 
+  alpha=0.25   k=800  restate=50000  groups=19  io_qer=0.228 bd_qer=0.018 io_excess=0.03043 bd_excess=0.02650 
+  alpha=0.5    k=64   restate=100000 groups=19  io_qer=0.281 bd_qer=0.123 io_excess=0.03574 bd_excess=0.02806 
+  alpha=0.5    k=200  restate=100000 groups=19  io_qer=0.263 bd_qer=0.000 io_excess=0.03977 bd_excess=0.00720 SEPARATES
+  alpha=0.5    k=800  restate=100000 groups=19  io_qer=0.316 bd_qer=0.000 io_excess=0.04119 bd_excess=0.00207 SEPARATES
+==== D7S sweep : finance_markets (rows<=200000) ====
+  alpha=0.001  k=64   restate=200    groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00796 bd_excess=0.00796 
+  alpha=0.001  k=200  restate=200    groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00167 bd_excess=0.00165 
+  alpha=0.001  k=800  restate=200    groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00175 bd_excess=0.00175 
+  alpha=0.01   k=64   restate=2000   groups=14  io_qer=0.048 bd_qer=0.048 io_excess=0.01235 bd_excess=0.01235 
+  alpha=0.01   k=200  restate=2000   groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00446 bd_excess=0.00446 
+  alpha=0.01   k=800  restate=2000   groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00149 bd_excess=0.00149 
+  alpha=0.05   k=64   restate=10000  groups=14  io_qer=0.071 bd_qer=0.095 io_excess=0.01198 bd_excess=0.01225 
+  alpha=0.05   k=200  restate=10000  groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00361 bd_excess=0.00481 
+  alpha=0.05   k=800  restate=10000  groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00153 bd_excess=0.00151 
+  alpha=0.1    k=64   restate=20000  groups=14  io_qer=0.048 bd_qer=0.071 io_excess=0.01199 bd_excess=0.01199 
+  alpha=0.1    k=200  restate=20000  groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00415 bd_excess=0.00312 
+  alpha=0.1    k=800  restate=20000  groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00317 bd_excess=0.00181 
+  alpha=0.25   k=64   restate=50000  groups=14  io_qer=0.024 bd_qer=0.119 io_excess=0.01140 bd_excess=0.01168 
+  alpha=0.25   k=200  restate=50000  groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00479 bd_excess=0.00528 
+  alpha=0.25   k=800  restate=50000  groups=14  io_qer=0.000 bd_qer=0.000 io_excess=0.00425 bd_excess=0.00197 
+  alpha=0.5    k=64   restate=100000 groups=14  io_qer=0.095 bd_qer=0.167 io_excess=0.02044 bd_excess=0.02125 
+  alpha=0.5    k=200  restate=100000 groups=14  io_qer=0.048 bd_qer=0.000 io_excess=0.01651 bd_excess=0.00612 SEPARATES
+  alpha=0.5    k=800  restate=100000 groups=14  io_qer=0.048 bd_qer=0.000 io_excess=0.01752 bd_excess=0.00162 SEPARATES
+==== D7S sweep : sports_football (rows<=200000) ====
+  alpha=0.001  k=64   restate=200    groups=4   io_qer=0.083 bd_qer=0.083 io_excess=0.01497 bd_excess=0.01497 
+  alpha=0.001  k=200  restate=200    groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00193 bd_excess=0.00193 
+  alpha=0.001  k=800  restate=200    groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00102 bd_excess=0.00102 
+  alpha=0.01   k=64   restate=2000   groups=4   io_qer=0.167 bd_qer=0.167 io_excess=0.01249 bd_excess=0.01249 
+  alpha=0.01   k=200  restate=2000   groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00391 bd_excess=0.00391 
+  alpha=0.01   k=800  restate=2000   groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00064 bd_excess=0.00064 
+  alpha=0.05   k=64   restate=10000  groups=4   io_qer=0.083 bd_qer=0.083 io_excess=0.01802 bd_excess=0.01802 
+  alpha=0.05   k=200  restate=10000  groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00193 bd_excess=0.00224 
+  alpha=0.05   k=800  restate=10000  groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00145 bd_excess=0.00140 
+  alpha=0.1    k=64   restate=20000  groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00570 bd_excess=0.00380 
+  alpha=0.1    k=200  restate=20000  groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00314 bd_excess=0.00100 
+  alpha=0.1    k=800  restate=20000  groups=4   io_qer=0.000 bd_qer=0.000 io_excess=0.00256 bd_excess=0.00151 
+  alpha=0.25   k=64   restate=50000  groups=4   io_qer=0.083 bd_qer=0.167 io_excess=0.01268 bd_excess=0.01154 
+  alpha=0.25   k=200  restate=50000  groups=4   io_qer=0.083 bd_qer=0.000 io_excess=0.01470 bd_excess=0.00305 SEPARATES
+  alpha=0.25   k=800  restate=50000  groups=4   io_qer=0.083 bd_qer=0.000 io_excess=0.01706 bd_excess=0.00124 SEPARATES
+  alpha=0.5    k=64   restate=100000 groups=4   io_qer=0.083 bd_qer=0.167 io_excess=0.02748 bd_excess=0.02896 
+  alpha=0.5    k=200  restate=100000 groups=4   io_qer=0.083 bd_qer=0.000 io_excess=0.04040 bd_excess=0.00515 SEPARATES
+  alpha=0.5    k=800  restate=100000 groups=4   io_qer=0.083 bd_qer=0.000 io_excess=0.04421 bd_excess=0.00171 SEPARATES

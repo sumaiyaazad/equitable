@@ -1,0 +1,141 @@
+{
+  "artifact_valid": true,
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "campaign_id": "benchmark_20261002T213200Z",
+  "campaign_phase": "validation",
+  "contract_version": 2,
+  "cpu_count": 16,
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "diagnostic": "boundary",
+  "disk_total_bytes": 418916810752,
+  "domains": [
+    "datacenter_drives",
+    "environment_airquality",
+    "finance_markets",
+    "sports_football",
+    "transportation_taxi"
+  ],
+  "finished_utc": "2026-10-02T21:54:25Z",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "invocation_id": "benchmark_20261002T213200Z_validation",
+  "kind": "boundary",
+  "machine": "x86_64",
+  "malformed_rows": 60,
+  "max_rows": 5000,
+  "memory_bytes": 135062691840,
+  "pass": true,
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "python_version": "3.12.12",
+  "repeat_index": 0,
+  "rows": [
+    {
+      "aggregates_unchanged": true,
+      "domain": "datacenter_drives",
+      "engine_accepted_malformed": 0,
+      "engine_rejected": 60,
+      "injected": 60,
+      "injected_per_class": 10,
+      "input_sha256": "5b1d3e2434b415023cbb081fdf8d5de55cebc57eb183e7b7bf2afa90c1e96a55",
+      "pass": true,
+      "rejected": 60,
+      "rows": 5000,
+      "violation_class_count": 6,
+      "violation_classes": [
+        "empty_entity",
+        "invalid_source_type",
+        "missing_event_time",
+        "missing_metric",
+        "nonnumeric_value",
+        "unparseable_time"
+      ]
+    },
+    {
+      "aggregates_unchanged": true,
+      "domain": "environment_airquality",
+      "engine_accepted_malformed": 0,
+      "engine_rejected": 60,
+      "injected": 60,
+      "injected_per_class": 10,
+      "input_sha256": "3a837b49e6f80b976c537322c474793be06dfc11683342b8238244f6eb877398",
+      "pass": true,
+      "rejected": 60,
+      "rows": 5000,
+      "violation_class_count": 6,
+      "violation_classes": [
+        "empty_entity",
+        "invalid_source_type",
+        "missing_event_time",
+        "missing_metric",
+        "nonnumeric_value",
+        "unparseable_time"
+      ]
+    },
+    {
+      "aggregates_unchanged": true,
+      "domain": "finance_markets",
+      "engine_accepted_malformed": 0,
+      "engine_rejected": 60,
+      "injected": 60,
+      "injected_per_class": 10,
+      "input_sha256": "fd0a6e54469294741a470c40c398850ccd18d3875355536a71a35bb08ec9e16f",
+      "pass": true,
+      "rejected": 60,
+      "rows": 5000,
+      "violation_class_count": 6,
+      "violation_classes": [
+        "empty_entity",
+        "invalid_source_type",
+        "missing_event_time",
+        "missing_metric",
+        "nonnumeric_value",
+        "unparseable_time"
+      ]
+    },
+    {
+      "aggregates_unchanged": true,
+      "domain": "sports_football",
+      "engine_accepted_malformed": 0,
+      "engine_rejected": 60,
+      "injected": 60,
+      "injected_per_class": 10,
+      "input_sha256": "5d909a92afd3f0205745f3aaf43515b634ccc00a013445e38019c9a57ed81225",
+      "pass": true,
+      "rejected": 60,
+      "rows": 5000,
+      "violation_class_count": 6,
+      "violation_classes": [
+        "empty_entity",
+        "invalid_source_type",
+        "missing_event_time",
+        "missing_metric",
+        "nonnumeric_value",
+        "unparseable_time"
+      ]
+    },
+    {
+      "aggregates_unchanged": true,
+      "domain": "transportation_taxi",
+      "engine_accepted_malformed": 0,
+      "engine_rejected": 60,
+      "injected": 60,
+      "injected_per_class": 10,
+      "input_sha256": "a44902535932131d3228c6ed44c08788a4bcd7faae0816fb4fe09942be302f94",
+      "pass": true,
+      "rejected": 60,
+      "rows": 5000,
+      "violation_class_count": 6,
+      "violation_classes": [
+        "empty_entity",
+        "invalid_source_type",
+        "missing_event_time",
+        "missing_metric",
+        "nonnumeric_value",
+        "unparseable_time"
+      ]
+    }
+  ],
+  "started_utc": "2026-10-02T21:54:12Z"
+}

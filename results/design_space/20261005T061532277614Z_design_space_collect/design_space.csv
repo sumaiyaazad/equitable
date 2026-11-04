@@ -1,0 +1,281 @@
+engine,domain,diagnostic,status,pass,repeat_unstable,repeats,repeats_pass,runs_unsupported,runs_blocked,runs_missing,metric,rows,hourly_emr,metric_min,metric_max,recovers,known_finding,known_finding_runs,reason,run_id
+feldera,datacenter_drives,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013745247114Z_datacenter_drives_feldera_d1
+feldera,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013818621847Z_datacenter_drives_feldera_d2
+feldera,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013843957191Z_datacenter_drives_feldera_d3
+feldera,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013905788676Z_datacenter_drives_feldera_d4
+feldera,datacenter_drives,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,evaluated open-source Feldera v0.324.0 deployment does not expose the durable checkpoint-and-recovery configuration D5 requires (POST /checkpoint -> 501 EnterpriseFeature),20261003T021645971135Z_datacenter_drives_feldera_d5
+feldera,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013921641513Z_datacenter_drives_feldera_d6
+feldera,datacenter_drives,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013954305350Z_datacenter_drives_feldera_d7
+feldera,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014013604646Z_datacenter_drives_feldera_d8
+flink,datacenter_drives,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014033630159Z_datacenter_drives_flink_d1
+flink,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014116173641Z_datacenter_drives_flink_d2
+flink,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T014201135362Z_datacenter_drives_flink_d3
+flink,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014245381323Z_datacenter_drives_flink_d4
+flink,datacenter_drives,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T024214592348Z_datacenter_drives_flink_d5
+flink,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014306508478Z_datacenter_drives_flink_d6
+flink,datacenter_drives,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014348280101Z_datacenter_drives_flink_d7
+flink,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014413339707Z_datacenter_drives_flink_d8
+ksqldb,datacenter_drives,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.001407289760961782,0.0013871856215194709,0.0016083311553848937,False,False,0,,20261003T015235720076Z_datacenter_drives_ksqldb_d1
+ksqldb,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T015424954312Z_datacenter_drives_ksqldb_d2
+ksqldb,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T015623237043Z_datacenter_drives_ksqldb_d3
+ksqldb,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T015816979362Z_datacenter_drives_ksqldb_d4
+ksqldb,datacenter_drives,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T040322781892Z_datacenter_drives_ksqldb_d5
+ksqldb,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T015910742253Z_datacenter_drives_ksqldb_d6
+ksqldb,datacenter_drives,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.008918842568303805,0.008918842568303805,0.008918842568303805,False,False,0,,20261003T020100742042Z_datacenter_drives_ksqldb_d7
+ksqldb,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T020212283618Z_datacenter_drives_ksqldb_d8
+materialize,datacenter_drives,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014404845508Z_datacenter_drives_materialize_d1
+materialize,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014503072670Z_datacenter_drives_materialize_d2
+materialize,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T014607784620Z_datacenter_drives_materialize_d3
+materialize,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014709822055Z_datacenter_drives_materialize_d4
+materialize,datacenter_drives,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T030614629704Z_datacenter_drives_materialize_d5
+materialize,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014737349775Z_datacenter_drives_materialize_d6
+materialize,datacenter_drives,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.004277815892489608,0.004277815892489608,0.004277815892489608,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T014840821343Z_datacenter_drives_materialize_d7
+materialize,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014913093660Z_datacenter_drives_materialize_d8
+reference,datacenter_drives,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013136310244Z_datacenter_drives_reference_d1
+reference,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013143001126Z_datacenter_drives_reference_d2
+reference,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013154212944Z_datacenter_drives_reference_d3
+reference,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013201966875Z_datacenter_drives_reference_d4
+reference,datacenter_drives,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,in-process adapter has no external process to crash,20261003T013748352832Z_datacenter_drives_reference_d5
+reference,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013205259578Z_datacenter_drives_reference_d6
+reference,datacenter_drives,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013215105268Z_datacenter_drives_reference_d7
+reference,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013223705148Z_datacenter_drives_reference_d8
+risingwave,datacenter_drives,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013739173051Z_datacenter_drives_risingwave_d1
+risingwave,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013813122559Z_datacenter_drives_risingwave_d2
+risingwave,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013846907572Z_datacenter_drives_risingwave_d3
+risingwave,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013920974905Z_datacenter_drives_risingwave_d4
+risingwave,datacenter_drives,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T021859229549Z_datacenter_drives_risingwave_d5
+risingwave,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013937185874Z_datacenter_drives_risingwave_d6
+risingwave,datacenter_drives,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014008834173Z_datacenter_drives_risingwave_d7
+risingwave,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014028984492Z_datacenter_drives_risingwave_d8
+spark,datacenter_drives,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013158720136Z_datacenter_drives_spark_d1
+spark,datacenter_drives,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013208374906Z_datacenter_drives_spark_d2
+spark,datacenter_drives,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013219441831Z_datacenter_drives_spark_d3
+spark,datacenter_drives,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013229576132Z_datacenter_drives_spark_d4
+spark,datacenter_drives,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T014307949216Z_datacenter_drives_spark_d5
+spark,datacenter_drives,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013234220423Z_datacenter_drives_spark_d6
+spark,datacenter_drives,D7,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,spark does not implement the 'restate' view,20261003T013238137505Z_datacenter_drives_spark_d7
+spark,datacenter_drives,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013244118450Z_datacenter_drives_spark_d8
+feldera,environment_airquality,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013117248550Z_environment_airquality_feldera_d1
+feldera,environment_airquality,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013148247862Z_environment_airquality_feldera_d2
+feldera,environment_airquality,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013209972247Z_environment_airquality_feldera_d3
+feldera,environment_airquality,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013231736055Z_environment_airquality_feldera_d4
+feldera,environment_airquality,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,evaluated open-source Feldera v0.324.0 deployment does not expose the durable checkpoint-and-recovery configuration D5 requires (POST /checkpoint -> 501 EnterpriseFeature),20261003T021645200009Z_environment_airquality_feldera_d5
+feldera,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013246527990Z_environment_airquality_feldera_d6
+feldera,environment_airquality,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013326747782Z_environment_airquality_feldera_d7
+feldera,environment_airquality,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013350358780Z_environment_airquality_feldera_d8
+flink,environment_airquality,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013122445191Z_environment_airquality_flink_d1
+flink,environment_airquality,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013204010461Z_environment_airquality_flink_d2
+flink,environment_airquality,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.001958740655549166,0.001886860264519839,0.003989361702127659,,False,0,,20261003T013247002471Z_environment_airquality_flink_d3
+flink,environment_airquality,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013331215556Z_environment_airquality_flink_d4
+flink,environment_airquality,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T024007652653Z_environment_airquality_flink_d5
+flink,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013348643669Z_environment_airquality_flink_d6
+flink,environment_airquality,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013432812096Z_environment_airquality_flink_d7
+flink,environment_airquality,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013458294132Z_environment_airquality_flink_d8
+ksqldb,environment_airquality,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.0015078104581733379,0.0013670814820771597,0.0015480187370579602,False,False,0,,20261003T013236476199Z_environment_airquality_ksqldb_d1
+ksqldb,environment_airquality,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013419603614Z_environment_airquality_ksqldb_d2
+ksqldb,environment_airquality,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013556619164Z_environment_airquality_ksqldb_d3
+ksqldb,environment_airquality,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013737643149Z_environment_airquality_ksqldb_d4
+ksqldb,environment_airquality,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T035919104127Z_environment_airquality_ksqldb_d5
+ksqldb,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013820057900Z_environment_airquality_ksqldb_d6
+ksqldb,environment_airquality,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.008918842568303805,0.008918842568303805,0.008918842568303805,False,False,0,,20261003T013951853159Z_environment_airquality_ksqldb_d7
+ksqldb,environment_airquality,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014051834284Z_environment_airquality_ksqldb_d8
+materialize,environment_airquality,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.2901027321525502,0.2901027321525502,0.2901027321525502,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013141787649Z_environment_airquality_materialize_d1
+materialize,environment_airquality,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.28742,0.28742,0.28742,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013236088331Z_environment_airquality_materialize_d2
+materialize,environment_airquality,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.0,0.0,0.0,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013334356339Z_environment_airquality_materialize_d3
+materialize,environment_airquality,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.29088,0.29088,0.29088,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013433473487Z_environment_airquality_materialize_d4
+materialize,environment_airquality,D5,fail,False,False,3,0,0,0,0,EMR,50000,,,,,False,0,,20261003T030509361731Z_environment_airquality_materialize_d5
+materialize,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013500665227Z_environment_airquality_materialize_d6
+materialize,environment_airquality,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.2929900318818354,0.2929900318818354,0.2929900318818354,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013554974964Z_environment_airquality_materialize_d7
+materialize,environment_airquality,D8,fail,False,False,3,0,0,0,0,HOP,50000,,,,,False,0,,20261003T013625228125Z_environment_airquality_materialize_d8
+reference,environment_airquality,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013020952706Z_environment_airquality_reference_d1
+reference,environment_airquality,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013026052959Z_environment_airquality_reference_d2
+reference,environment_airquality,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013034313360Z_environment_airquality_reference_d3
+reference,environment_airquality,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013040603855Z_environment_airquality_reference_d4
+reference,environment_airquality,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,in-process adapter has no external process to crash,20261003T013745414486Z_environment_airquality_reference_d5
+reference,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013043138023Z_environment_airquality_reference_d6
+reference,environment_airquality,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013050650773Z_environment_airquality_reference_d7
+reference,environment_airquality,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013056782196Z_environment_airquality_reference_d8
+risingwave,environment_airquality,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013110268837Z_environment_airquality_risingwave_d1
+risingwave,environment_airquality,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013140272609Z_environment_airquality_risingwave_d2
+risingwave,environment_airquality,D3,repeat-unstable,False,True,3,1,0,0,0,DDR,50000,1.79700977573318e-05,0.0,0.0001257906843013226,,False,0,,20261003T013209921070Z_environment_airquality_risingwave_d3
+risingwave,environment_airquality,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013241852430Z_environment_airquality_risingwave_d4
+risingwave,environment_airquality,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T021814664851Z_environment_airquality_risingwave_d5
+risingwave,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013258082585Z_environment_airquality_risingwave_d6
+risingwave,environment_airquality,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013326917405Z_environment_airquality_risingwave_d7
+risingwave,environment_airquality,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013345056607Z_environment_airquality_risingwave_d8
+spark,environment_airquality,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013029894441Z_environment_airquality_spark_d1
+spark,environment_airquality,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013037819428Z_environment_airquality_spark_d2
+spark,environment_airquality,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013046183459Z_environment_airquality_spark_d3
+spark,environment_airquality,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013054895770Z_environment_airquality_spark_d4
+spark,environment_airquality,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T014159339692Z_environment_airquality_spark_d5
+spark,environment_airquality,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013058855912Z_environment_airquality_spark_d6
+spark,environment_airquality,D7,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,spark does not implement the 'restate' view,20261003T013102639052Z_environment_airquality_spark_d7
+spark,environment_airquality,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013109344910Z_environment_airquality_spark_d8
+feldera,finance_markets,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014104998752Z_finance_markets_feldera_d1
+feldera,finance_markets,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014132873699Z_finance_markets_feldera_d2
+feldera,finance_markets,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T014150571396Z_finance_markets_feldera_d3
+feldera,finance_markets,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014208332878Z_finance_markets_feldera_d4
+feldera,finance_markets,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,evaluated open-source Feldera v0.324.0 deployment does not expose the durable checkpoint-and-recovery configuration D5 requires (POST /checkpoint -> 501 EnterpriseFeature),20261003T021646346526Z_finance_markets_feldera_d5
+feldera,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014221572365Z_finance_markets_feldera_d6
+feldera,finance_markets,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014248451201Z_finance_markets_feldera_d7
+feldera,finance_markets,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014303182076Z_finance_markets_feldera_d8
+flink,finance_markets,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014513634480Z_finance_markets_flink_d1
+flink,finance_markets,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014554198621Z_finance_markets_flink_d2
+flink,finance_markets,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.46111111111111114,0.3,0.5652777777777778,,False,0,,20261003T014634110422Z_finance_markets_flink_d3
+flink,finance_markets,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014715237736Z_finance_markets_flink_d4
+flink,finance_markets,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T024312863588Z_finance_markets_flink_d5
+flink,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014735467389Z_finance_markets_flink_d6
+flink,finance_markets,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014824753765Z_finance_markets_flink_d7
+flink,finance_markets,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014845004386Z_finance_markets_flink_d8
+ksqldb,finance_markets,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.2412280701754386,0.23976608187134502,0.2412280701754386,False,False,0,,20261003T020407922941Z_finance_markets_ksqldb_d1
+ksqldb,finance_markets,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.7441520467836257,0.7441520467836257,0.7441520467836257,,False,0,,20261003T020521265939Z_finance_markets_ksqldb_d2
+ksqldb,finance_markets,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T020639232678Z_finance_markets_ksqldb_d3
+ksqldb,finance_markets,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.010526315789473684,0.010526315789473684,0.010526315789473684,,False,0,,20261003T020754932900Z_finance_markets_ksqldb_d4
+ksqldb,finance_markets,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T040512340533Z_finance_markets_ksqldb_d5
+ksqldb,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T020834796876Z_finance_markets_ksqldb_d6
+ksqldb,finance_markets,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.45321637426900585,0.45321637426900585,0.45321637426900585,False,False,0,,20261003T020952087690Z_finance_markets_ksqldb_d7
+ksqldb,finance_markets,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T021032266231Z_finance_markets_ksqldb_d8
+materialize,finance_markets,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.5,0.5,0.5,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015030735896Z_finance_markets_materialize_d1
+materialize,finance_markets,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.5,0.5,0.5,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015119484195Z_finance_markets_materialize_d2
+materialize,finance_markets,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.0,0.0,0.0,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015211002569Z_finance_markets_materialize_d3
+materialize,finance_markets,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.4965311004784689,0.4965311004784689,0.4965311004784689,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015306035925Z_finance_markets_materialize_d4
+materialize,finance_markets,D5,fail,False,False,3,0,0,0,0,EMR,50000,,,,,False,0,,20261003T030649246251Z_finance_markets_materialize_d5
+materialize,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T015330869065Z_finance_markets_materialize_d6
+materialize,finance_markets,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.5,0.5,0.5,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015420178697Z_finance_markets_materialize_d7
+materialize,finance_markets,D8,fail,False,False,3,0,0,0,0,HOP,50000,,,,,False,0,,20261003T015448265963Z_finance_markets_materialize_d8
+reference,finance_markets,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013227776758Z_finance_markets_reference_d1
+reference,finance_markets,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013231762134Z_finance_markets_reference_d2
+reference,finance_markets,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013237314466Z_finance_markets_reference_d3
+reference,finance_markets,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013242395897Z_finance_markets_reference_d4
+reference,finance_markets,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,in-process adapter has no external process to crash,20261003T013749633830Z_finance_markets_reference_d5
+reference,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013244164995Z_finance_markets_reference_d6
+reference,finance_markets,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013249965360Z_finance_markets_reference_d7
+reference,finance_markets,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013254758809Z_finance_markets_reference_d8
+risingwave,finance_markets,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014109228618Z_finance_markets_risingwave_d1
+risingwave,finance_markets,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014134678106Z_finance_markets_risingwave_d2
+risingwave,finance_markets,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.5986111111111111,0.5680555555555555,0.5986111111111111,,False,0,,20261003T014200567825Z_finance_markets_risingwave_d3
+risingwave,finance_markets,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014228469630Z_finance_markets_risingwave_d4
+risingwave,finance_markets,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T021917805466Z_finance_markets_risingwave_d5
+risingwave,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014240525955Z_finance_markets_risingwave_d6
+risingwave,finance_markets,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014307309955Z_finance_markets_risingwave_d7
+risingwave,finance_markets,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014321209846Z_finance_markets_risingwave_d8
+spark,finance_markets,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013251829738Z_finance_markets_spark_d1
+spark,finance_markets,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013257990374Z_finance_markets_spark_d2
+spark,finance_markets,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013304211341Z_finance_markets_spark_d3
+spark,finance_markets,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013311377463Z_finance_markets_spark_d4
+spark,finance_markets,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T014337910779Z_finance_markets_spark_d5
+spark,finance_markets,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013313777955Z_finance_markets_spark_d6
+spark,finance_markets,D7,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,spark does not implement the 'restate' view,20261003T013317061459Z_finance_markets_spark_d7
+spark,finance_markets,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013320211143Z_finance_markets_spark_d8
+feldera,sports_football,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014352321664Z_sports_football_feldera_d1
+feldera,sports_football,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014419207173Z_sports_football_feldera_d2
+feldera,sports_football,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T014436842376Z_sports_football_feldera_d3
+feldera,sports_football,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014454247367Z_sports_football_feldera_d4
+feldera,sports_football,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,evaluated open-source Feldera v0.324.0 deployment does not expose the durable checkpoint-and-recovery configuration D5 requires (POST /checkpoint -> 501 EnterpriseFeature),20261003T021646688718Z_sports_football_feldera_d5
+feldera,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014507540143Z_sports_football_feldera_d6
+feldera,sports_football,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014535360817Z_sports_football_feldera_d7
+feldera,sports_football,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014549087629Z_sports_football_feldera_d8
+flink,sports_football,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014947006214Z_sports_football_flink_d1
+flink,sports_football,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T015027964511Z_sports_football_flink_d2
+flink,sports_football,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.5815217391304348,0.5434782608695652,0.6304347826086957,,False,0,,20261003T015109127504Z_sports_football_flink_d3
+flink,sports_football,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T015150159972Z_sports_football_flink_d4
+flink,sports_football,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T024411117095Z_sports_football_flink_d5
+flink,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T015210433103Z_sports_football_flink_d6
+flink,sports_football,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T015254572735Z_sports_football_flink_d7
+flink,sports_football,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T015317606711Z_sports_football_flink_d8
+ksqldb,sports_football,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.5652173913043478,0.5652173913043478,0.5760869565217391,False,False,0,,20261003T021224562291Z_sports_football_ksqldb_d1
+ksqldb,sports_football,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.6630434782608695,0.6630434782608695,0.6630434782608695,,False,0,,20261003T021344164134Z_sports_football_ksqldb_d2
+ksqldb,sports_football,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T021458010617Z_sports_football_ksqldb_d3
+ksqldb,sports_football,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.02403846153846154,0.02403846153846154,0.02403846153846154,,False,0,,20261003T021614894421Z_sports_football_ksqldb_d4
+ksqldb,sports_football,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T040658245244Z_sports_football_ksqldb_d5
+ksqldb,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T021655419214Z_sports_football_ksqldb_d6
+ksqldb,sports_football,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.9891304347826086,0.9891304347826086,0.9891304347826086,False,False,0,,20261003T021812698527Z_sports_football_ksqldb_d7
+ksqldb,sports_football,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T021855783856Z_sports_football_ksqldb_d8
+materialize,sports_football,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.5652173913043478,0.5652173913043478,0.5652173913043478,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015618698264Z_sports_football_materialize_d1
+materialize,sports_football,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.5652173913043478,0.5652173913043478,0.5652173913043478,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015722212816Z_sports_football_materialize_d2
+materialize,sports_football,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.0,0.0,0.0,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015816331066Z_sports_football_materialize_d3
+materialize,sports_football,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.5625,0.5625,0.5625,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T015912081900Z_sports_football_materialize_d4
+materialize,sports_football,D5,fail,False,False,3,0,0,0,0,EMR,50000,,,,,False,0,,20261003T030723334840Z_sports_football_materialize_d5
+materialize,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T015940229814Z_sports_football_materialize_d6
+materialize,sports_football,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.5652173913043478,0.5652173913043478,0.5652173913043478,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T020033481774Z_sports_football_materialize_d7
+materialize,sports_football,D8,fail,False,False,3,0,0,0,0,HOP,50000,,,,,False,0,,20261003T020058676840Z_sports_football_materialize_d8
+reference,sports_football,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013258646145Z_sports_football_reference_d1
+reference,sports_football,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013302573802Z_sports_football_reference_d2
+reference,sports_football,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013308386264Z_sports_football_reference_d3
+reference,sports_football,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013313041927Z_sports_football_reference_d4
+reference,sports_football,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,in-process adapter has no external process to crash,20261003T013750881137Z_sports_football_reference_d5
+reference,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013314732019Z_sports_football_reference_d6
+reference,sports_football,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013320261971Z_sports_football_reference_d7
+reference,sports_football,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013324964290Z_sports_football_reference_d8
+risingwave,sports_football,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014401807709Z_sports_football_risingwave_d1
+risingwave,sports_football,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014429297610Z_sports_football_risingwave_d2
+risingwave,sports_football,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.3858695652173913,0.375,0.47282608695652173,,False,0,,20261003T014456211513Z_sports_football_risingwave_d3
+risingwave,sports_football,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T014524417217Z_sports_football_risingwave_d4
+risingwave,sports_football,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T021938971636Z_sports_football_risingwave_d5
+risingwave,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014535485861Z_sports_football_risingwave_d6
+risingwave,sports_football,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T014604411349Z_sports_football_risingwave_d7
+risingwave,sports_football,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014620595130Z_sports_football_risingwave_d8
+spark,sports_football,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013327711299Z_sports_football_spark_d1
+spark,sports_football,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013333804607Z_sports_football_spark_d2
+spark,sports_football,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013340050704Z_sports_football_spark_d3
+spark,sports_football,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013346873877Z_sports_football_spark_d4
+spark,sports_football,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T014406478519Z_sports_football_spark_d5
+spark,sports_football,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013349774554Z_sports_football_spark_d6
+spark,sports_football,D7,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,spark does not implement the 'restate' view,20261003T013353010223Z_sports_football_spark_d7
+spark,sports_football,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013356192744Z_sports_football_spark_d8
+feldera,transportation_taxi,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013440920463Z_transportation_taxi_feldera_d1
+feldera,transportation_taxi,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013508316357Z_transportation_taxi_feldera_d2
+feldera,transportation_taxi,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013526461116Z_transportation_taxi_feldera_d3
+feldera,transportation_taxi,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013546224716Z_transportation_taxi_feldera_d4
+feldera,transportation_taxi,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,evaluated open-source Feldera v0.324.0 deployment does not expose the durable checkpoint-and-recovery configuration D5 requires (POST /checkpoint -> 501 EnterpriseFeature),20261003T021645610823Z_transportation_taxi_feldera_d5
+feldera,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013559677062Z_transportation_taxi_feldera_d6
+feldera,transportation_taxi,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013626841300Z_transportation_taxi_feldera_d7
+feldera,transportation_taxi,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013640832918Z_transportation_taxi_feldera_d8
+flink,transportation_taxi,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013600148406Z_transportation_taxi_flink_d1
+flink,transportation_taxi,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013641319384Z_transportation_taxi_flink_d2
+flink,transportation_taxi,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.10815688161693937,0.10021655437921077,0.11814244465832531,,False,0,,20261003T013725625243Z_transportation_taxi_flink_d3
+flink,transportation_taxi,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013808354596Z_transportation_taxi_flink_d4
+flink,transportation_taxi,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T024110994512Z_transportation_taxi_flink_d5
+flink,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013828718586Z_transportation_taxi_flink_d6
+flink,transportation_taxi,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013910263915Z_transportation_taxi_flink_d7
+flink,transportation_taxi,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013931254634Z_transportation_taxi_flink_d8
+ksqldb,transportation_taxi,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.01950886766712142,0.01937244201909959,0.019781718963165076,False,False,0,,20261003T014250493466Z_transportation_taxi_ksqldb_d1
+ksqldb,transportation_taxi,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.1268717669479989,0.1268717669479989,0.1268717669479989,,False,0,,20261003T014409018319Z_transportation_taxi_ksqldb_d2
+ksqldb,transportation_taxi,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T014535488139Z_transportation_taxi_ksqldb_d3
+ksqldb,transportation_taxi,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.0007438986008984006,0.0007438986008984006,0.0007438986008984006,,False,0,,20261003T014708001008Z_transportation_taxi_ksqldb_d4
+ksqldb,transportation_taxi,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T040110021750Z_transportation_taxi_ksqldb_d5
+ksqldb,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014745786690Z_transportation_taxi_ksqldb_d6
+ksqldb,transportation_taxi,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.05738153930430019,0.05738153930430019,0.05738153930430019,False,False,0,,20261003T014908978167Z_transportation_taxi_ksqldb_d7
+ksqldb,transportation_taxi,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T014950761404Z_transportation_taxi_ksqldb_d8
+materialize,transportation_taxi,D1,fail,False,False,3,0,0,0,0,EMR,50000,0.5422919508867667,0.5422919508867667,0.5422919508867667,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013757991611Z_transportation_taxi_materialize_d1
+materialize,transportation_taxi,D2,fail,False,False,3,0,0,0,0,EMR,50000,0.5432888646882658,0.5432888646882658,0.5432888646882658,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013853630397Z_transportation_taxi_materialize_d2
+materialize,transportation_taxi,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.0,0.0,0.0,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T013949008619Z_transportation_taxi_materialize_d3
+materialize,transportation_taxi,D4,fail,False,False,3,0,0,0,0,EMR,50000,0.5151783926067923,0.5151783926067923,0.5151783926067923,,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T014046817047Z_transportation_taxi_materialize_d4
+materialize,transportation_taxi,D5,fail,False,False,3,0,0,0,0,EMR,50000,,,,,False,0,,20261003T030542208219Z_transportation_taxi_materialize_d5
+materialize,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T014113791189Z_transportation_taxi_materialize_d6
+materialize,transportation_taxi,D7,fail,False,False,3,0,0,0,0,EMR,50000,0.5425910709394687,0.5425910709394687,0.5425910709394687,False,"sum/mean-only divergence within the declared magnitude envelope (deterministic, even on single-row groups)",3,,20261003T014208144921Z_transportation_taxi_materialize_d7
+materialize,transportation_taxi,D8,fail,False,False,3,0,0,0,0,HOP,50000,,,,,False,0,,20261003T014236922386Z_transportation_taxi_materialize_d8
+reference,transportation_taxi,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013100945237Z_transportation_taxi_reference_d1
+reference,transportation_taxi,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013105186844Z_transportation_taxi_reference_d2
+reference,transportation_taxi,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013111529456Z_transportation_taxi_reference_d3
+reference,transportation_taxi,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013117131257Z_transportation_taxi_reference_d4
+reference,transportation_taxi,D5,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,in-process adapter has no external process to crash,20261003T013746791830Z_transportation_taxi_reference_d5
+reference,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013119091308Z_transportation_taxi_reference_d6
+reference,transportation_taxi,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013125212759Z_transportation_taxi_reference_d7
+reference,transportation_taxi,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013130157536Z_transportation_taxi_reference_d8
+risingwave,transportation_taxi,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013425606506Z_transportation_taxi_risingwave_d1
+risingwave,transportation_taxi,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013453687581Z_transportation_taxi_risingwave_d2
+risingwave,transportation_taxi,D3,fail,False,False,3,0,0,0,0,DDR,50000,0.0751924927815207,0.0712223291626564,0.08048604427333975,,False,0,,20261003T013521030352Z_transportation_taxi_risingwave_d3
+risingwave,transportation_taxi,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013548451680Z_transportation_taxi_risingwave_d4
+risingwave,transportation_taxi,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T021833392340Z_transportation_taxi_risingwave_d5
+risingwave,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013600182669Z_transportation_taxi_risingwave_d6
+risingwave,transportation_taxi,D7,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013626900822Z_transportation_taxi_risingwave_d7
+risingwave,transportation_taxi,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013641179355Z_transportation_taxi_risingwave_d8
+spark,transportation_taxi,D1,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,True,False,0,,20261003T013117080517Z_transportation_taxi_spark_d1
+spark,transportation_taxi,D2,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013122934017Z_transportation_taxi_spark_d2
+spark,transportation_taxi,D3,pass,True,False,3,3,0,0,0,DDR,50000,0.0,0.0,0.0,,False,0,,20261003T013129010684Z_transportation_taxi_spark_d3
+spark,transportation_taxi,D4,pass,True,False,3,3,0,0,0,EMR,50000,0.0,0.0,0.0,,False,0,,20261003T013137640860Z_transportation_taxi_spark_d4
+spark,transportation_taxi,D5,pass,True,False,3,3,0,0,0,EMR,50000,,,,,False,0,,20261003T014232401047Z_transportation_taxi_spark_d5
+spark,transportation_taxi,D6,pass,True,False,3,3,0,0,0,TOPK,50000,0.0,0.0,0.0,,False,0,,20261003T013140200759Z_transportation_taxi_spark_d6
+spark,transportation_taxi,D7,unsupported,False,False,3,0,3,0,0,EMR,50000,,,,,False,0,spark does not implement the 'restate' view,20261003T013142492006Z_transportation_taxi_spark_d7
+spark,transportation_taxi,D8,pass,True,False,3,3,0,0,0,HOP,50000,,,,,False,0,,20261003T013146237823Z_transportation_taxi_spark_d8

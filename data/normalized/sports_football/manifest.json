@@ -1,0 +1,48 @@
+{
+  "domain": "sports_football",
+  "source": "Metrica Sports sample tracking data (github.com/metrica-sports/sample-data)",
+  "rows": 1000000,
+  "entities": 29,
+  "metrics": [
+    "distance",
+    "pos_x",
+    "pos_y",
+    "speed"
+  ],
+  "sha256": "5d909a92afd3f0205745f3aaf43515b634ccc00a013445e38019c9a57ed81225",
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "contract_version": 2,
+  "dedupe_identity": "source_observation",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "written_utc": "2026-10-02T21:35:05Z",
+  "log_path": "data/normalized/sports_football/log.parquet",
+  "rows_before_cap": 13113190,
+  "selection": "uniform 1000000 evenly spaced by (event_time_utc, dedupe_id)",
+  "mode": "from_raw",
+  "game": 1,
+  "input_sha256": "07c663f649ada9be560bbd0af23d60e4e7e5887221753707cf64e2e91e573d49",
+  "input_file_count": 2,
+  "input_files": [
+    {
+      "name": "Sample_Game_1_RawTrackingData_Home_Team.csv",
+      "sha256": "0a3d0eff7785950379c587d3597b86a2d91c2492281b4652e1abb97c99b6b364",
+      "bytes": 32782961
+    },
+    {
+      "name": "Sample_Game_1_RawTrackingData_Away_Team.csv",
+      "sha256": "0a3df68a92af0290ede472e62de3b6489ddee29223da09bdf0cf76c8e0ab0618",
+      "bytes": 32782073
+    }
+  ]
+}

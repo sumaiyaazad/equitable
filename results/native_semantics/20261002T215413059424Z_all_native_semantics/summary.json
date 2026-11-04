@@ -1,0 +1,2620 @@
+{
+  "allowed_lateness_s": 300,
+  "artifact_valid": true,
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "campaign_id": "benchmark_20261002T213200Z",
+  "campaign_phase": "validation",
+  "classified_cells": 42,
+  "contract_version": 2,
+  "cpu_count": 16,
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "disk_total_bytes": 418916810752,
+  "divergences": [],
+  "diverging_cells": 0,
+  "domains": [
+    "environment_airquality",
+    "transportation_taxi",
+    "datacenter_drives",
+    "finance_markets",
+    "sports_football"
+  ],
+  "engines": [
+    "reference",
+    "materialize",
+    "risingwave",
+    "ksqldb",
+    "flink",
+    "spark",
+    "feldera"
+  ],
+  "finished_utc": "2026-10-02T21:56:42Z",
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "invocation_id": "benchmark_20261002T213200Z_validation",
+  "k": 10,
+  "kind": "native_semantics",
+  "machine": "x86_64",
+  "max_rows": 20000,
+  "measured_cells": 16,
+  "memory_bytes": 135062691840,
+  "pass": true,
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "probe": "all",
+  "processor": "x86_64",
+  "python_version": "3.12.12",
+  "rank_metric": "mean",
+  "repeat_index": 0,
+  "scope_note": "D4 and D6 portable final-state diagnostics remain separate. This block licenses native watermark and incremental Top-N claims only for rows whose status is measured. Measured cells whose native view diverges from the oracle are reported as findings in diverging_cells and do not invalidate the probe.",
+  "started_utc": "20261002T215413059424Z",
+  "topk": [
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "environment_airquality",
+      "engine": "reference",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 35,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2721.0246562581938,
+            "rows_sent": 5000,
+            "seconds": 1.8375430698506534
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 43,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2779.217368981693,
+            "rows_sent": 5000,
+            "seconds": 1.7990676281042397
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 49,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2366.920875764774,
+            "rows_sent": 5000,
+            "seconds": 2.112449153326452
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 57,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2823.3197878520614,
+            "rows_sent": 5000,
+            "seconds": 1.770964812953025
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "environment_airquality",
+      "engine": "materialize",
+      "input": "data/normalized/environment_airquality/log.parquet",
+      "input_sha256": "3a837b49e6f80b976c537322c474793be06dfc11683342b8238244f6eb877398",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 35,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8761.417291760301,
+            "rows_sent": 5000,
+            "seconds": 0.5706839240156114
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 43,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8860.628486412055,
+            "rows_sent": 5000,
+            "seconds": 0.5642940574325621
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 49,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8745.520985501042,
+            "rows_sent": 5000,
+            "seconds": 0.5717212283052504
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 57,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8964.24354463043,
+            "rows_sent": 5000,
+            "seconds": 0.5577715481631458
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "environment_airquality",
+      "engine": "risingwave",
+      "input": "data/normalized/environment_airquality/log.parquet",
+      "input_sha256": "3a837b49e6f80b976c537322c474793be06dfc11683342b8238244f6eb877398",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "environment_airquality",
+      "engine": "ksqldb",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "environment_airquality",
+      "engine": "flink",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "environment_airquality",
+      "engine": "spark",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 35,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 14845.403785821783,
+            "rows_sent": 5000,
+            "seconds": 0.3368045808747411
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 43,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15066.358360112506,
+            "rows_sent": 5000,
+            "seconds": 0.3318651979789138
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 49,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15120.042455008625,
+            "rows_sent": 5000,
+            "seconds": 0.3306869021616876
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 57,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15156.04483340549,
+            "rows_sent": 5000,
+            "seconds": 0.329901373013854
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "environment_airquality",
+      "engine": "feldera",
+      "input": "data/normalized/environment_airquality/log.parquet",
+      "input_sha256": "3a837b49e6f80b976c537322c474793be06dfc11683342b8238244f6eb877398",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "transportation_taxi",
+      "engine": "reference",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 1
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 15,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2739.9888932725244,
+            "rows_sent": 5000,
+            "seconds": 1.824824915267527
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 36,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2356.4194144617622,
+            "rows_sent": 5000,
+            "seconds": 2.1218633530661464
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 45,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2989.7883902826916,
+            "rows_sent": 5000,
+            "seconds": 1.672359159681946
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 51,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2461.8654335496967,
+            "rows_sent": 5000,
+            "seconds": 2.030980220064521
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "transportation_taxi",
+      "engine": "materialize",
+      "input": "data/normalized/transportation_taxi/log.parquet",
+      "input_sha256": "a44902535932131d3228c6ed44c08788a4bcd7faae0816fb4fe09942be302f94",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 15,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 9808.92996217023,
+            "rows_sent": 5000,
+            "seconds": 0.5097395963966846
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 36,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 9882.97319190319,
+            "rows_sent": 5000,
+            "seconds": 0.5059206276200712
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 45,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10126.21557373001,
+            "rows_sent": 5000,
+            "seconds": 0.4937678803689778
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 51,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10103.311306055677,
+            "rows_sent": 5000,
+            "seconds": 0.49488725513219833
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "transportation_taxi",
+      "engine": "risingwave",
+      "input": "data/normalized/transportation_taxi/log.parquet",
+      "input_sha256": "a44902535932131d3228c6ed44c08788a4bcd7faae0816fb4fe09942be302f94",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "transportation_taxi",
+      "engine": "ksqldb",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "transportation_taxi",
+      "engine": "flink",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "transportation_taxi",
+      "engine": "spark",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 15,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15094.94283132241,
+            "rows_sent": 5000,
+            "seconds": 0.3312367629259825
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 36,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15109.255198414541,
+            "rows_sent": 5000,
+            "seconds": 0.33092299615964293
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 45,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15133.80708690624,
+            "rows_sent": 5000,
+            "seconds": 0.3303861329331994
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 51,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15127.65580294575,
+            "rows_sent": 5000,
+            "seconds": 0.3305204762145877
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "transportation_taxi",
+      "engine": "feldera",
+      "input": "data/normalized/transportation_taxi/log.parquet",
+      "input_sha256": "a44902535932131d3228c6ed44c08788a4bcd7faae0816fb4fe09942be302f94",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "datacenter_drives",
+      "engine": "reference",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2794.336850839075,
+            "rows_sent": 5000,
+            "seconds": 1.7893333076499403
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2423.1428611869133,
+            "rows_sent": 5000,
+            "seconds": 2.063435912132263
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2528.4353626536763,
+            "rows_sent": 5000,
+            "seconds": 1.9775075423531234
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2083.447304185497,
+            "rows_sent": 5000,
+            "seconds": 2.399868712760508
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "datacenter_drives",
+      "engine": "materialize",
+      "input": "data/normalized/datacenter_drives/log.parquet",
+      "input_sha256": "5b1d3e2434b415023cbb081fdf8d5de55cebc57eb183e7b7bf2afa90c1e96a55",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 7934.040753088907,
+            "rows_sent": 5000,
+            "seconds": 0.6301959059201181
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8319.068103810525,
+            "rows_sent": 5000,
+            "seconds": 0.6010288577526808
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8330.271693055758,
+            "rows_sent": 5000,
+            "seconds": 0.600220519118011
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 8055.371213582472,
+            "rows_sent": 5000,
+            "seconds": 0.6207038592547178
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "datacenter_drives",
+      "engine": "risingwave",
+      "input": "data/normalized/datacenter_drives/log.parquet",
+      "input_sha256": "5b1d3e2434b415023cbb081fdf8d5de55cebc57eb183e7b7bf2afa90c1e96a55",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "datacenter_drives",
+      "engine": "ksqldb",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "datacenter_drives",
+      "engine": "flink",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "datacenter_drives",
+      "engine": "spark",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 14938.802352793235,
+            "rows_sent": 5000,
+            "seconds": 0.3346988521516323
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15182.071647124834,
+            "rows_sent": 5000,
+            "seconds": 0.3293358189985156
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15194.541343903318,
+            "rows_sent": 5000,
+            "seconds": 0.32906554313376546
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 3,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15155.859272709302,
+            "rows_sent": 5000,
+            "seconds": 0.32990541215986013
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "datacenter_drives",
+      "engine": "feldera",
+      "input": "data/normalized/datacenter_drives/log.parquet",
+      "input_sha256": "5b1d3e2434b415023cbb081fdf8d5de55cebc57eb183e7b7bf2afa90c1e96a55",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "finance_markets",
+      "engine": "reference",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 18,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2978.988980654859,
+            "rows_sent": 5000,
+            "seconds": 1.6784217841923237
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 32,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2941.391441027855,
+            "rows_sent": 5000,
+            "seconds": 1.6998757561668754
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 46,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2913.1536221808556,
+            "rows_sent": 5000,
+            "seconds": 1.7163530141115189
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 60,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2502.968719500992,
+            "rows_sent": 5000,
+            "seconds": 1.997627841308713
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "finance_markets",
+      "engine": "materialize",
+      "input": "data/normalized/finance_markets/log.parquet",
+      "input_sha256": "fd0a6e54469294741a470c40c398850ccd18d3875355536a71a35bb08ec9e16f",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 18,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 9667.661653323548,
+            "rows_sent": 5000,
+            "seconds": 0.517188145313412
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 32,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10076.682887833103,
+            "rows_sent": 5000,
+            "seconds": 0.4961950331926346
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 46,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10238.134412212108,
+            "rows_sent": 5000,
+            "seconds": 0.4883702243678272
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 60,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10155.916789104052,
+            "rows_sent": 5000,
+            "seconds": 0.49232384469360113
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "finance_markets",
+      "engine": "risingwave",
+      "input": "data/normalized/finance_markets/log.parquet",
+      "input_sha256": "fd0a6e54469294741a470c40c398850ccd18d3875355536a71a35bb08ec9e16f",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "finance_markets",
+      "engine": "ksqldb",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "finance_markets",
+      "engine": "flink",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "finance_markets",
+      "engine": "spark",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 18,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15027.355621602932,
+            "rows_sent": 5000,
+            "seconds": 0.33272653724998236
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 32,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15106.591500290886,
+            "rows_sent": 5000,
+            "seconds": 0.3309813467785716
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 2,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 46,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 14114.32643619038,
+            "rows_sent": 5000,
+            "seconds": 0.35424999007955194
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 60,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15147.269455886471,
+            "rows_sent": 5000,
+            "seconds": 0.33009249716997147
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "finance_markets",
+      "engine": "feldera",
+      "input": "data/normalized/finance_markets/log.parquet",
+      "input_sha256": "fd0a6e54469294741a470c40c398850ccd18d3875355536a71a35bb08ec9e16f",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "sports_football",
+      "engine": "reference",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2627.052555400417,
+            "rows_sent": 5000,
+            "seconds": 1.9032736858353019
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2731.456483936027,
+            "rows_sent": 5000,
+            "seconds": 1.8305252268910408
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2535.9603318491013,
+            "rows_sent": 5000,
+            "seconds": 1.9716396732255816
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 2392.5415195040496,
+            "rows_sent": 5000,
+            "seconds": 2.0898278919048607
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "sports_football",
+      "engine": "materialize",
+      "input": "data/normalized/sports_football/log.parquet",
+      "input_sha256": "5d909a92afd3f0205745f3aaf43515b634ccc00a013445e38019c9a57ed81225",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 9847.040831878474,
+            "rows_sent": 5000,
+            "seconds": 0.5077667580917478
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10305.587247070614,
+            "rows_sent": 5000,
+            "seconds": 0.4851737101562321
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10190.181457114873,
+            "rows_sent": 5000,
+            "seconds": 0.4906683969311416
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 10332.617898865825,
+            "rows_sent": 5000,
+            "seconds": 0.48390447115525603
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "sports_football",
+      "engine": "risingwave",
+      "input": "data/normalized/sports_football/log.parquet",
+      "input_sha256": "5d909a92afd3f0205745f3aaf43515b634ccc00a013445e38019c9a57ed81225",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "sports_football",
+      "engine": "ksqldb",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "sports_football",
+      "engine": "flink",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [],
+      "domain": "sports_football",
+      "engine": "spark",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "unsupported",
+      "pass": null,
+      "rank_metric": "mean",
+      "reason": "adapter has no engine-maintained incremental Top-N formulation",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "artifact_valid": true,
+      "checkpoints": [
+        {
+          "checkpoint": 1,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 14982.97582601691,
+            "rows_sent": 5000,
+            "seconds": 0.33371207816526294
+          },
+          "pass": true,
+          "rows": 5000
+        },
+        {
+          "checkpoint": 2,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 14994.996827970177,
+            "rows_sent": 5000,
+            "seconds": 0.33344455203041434
+          },
+          "pass": true,
+          "rows": 10000
+        },
+        {
+          "checkpoint": 3,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15023.268383144243,
+            "rows_sent": 5000,
+            "seconds": 0.33281705901026726
+          },
+          "pass": true,
+          "rows": 15000
+        },
+        {
+          "checkpoint": 4,
+          "daily": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "hourly": {
+            "equivalent": true,
+            "groups": 4,
+            "mismatch_detail": [],
+            "rank_emr": 0.0,
+            "rank_mismatches": 0,
+            "set_emr": 0.0,
+            "set_mismatches": 0,
+            "tie_aware": true,
+            "tie_resolved_groups": 0
+          },
+          "ingest": {
+            "rows_per_sec": 15085.015961958008,
+            "rows_sent": 5000,
+            "seconds": 0.3314547371119261
+          },
+          "pass": true,
+          "rows": 20000
+        }
+      ],
+      "domain": "sports_football",
+      "engine": "feldera",
+      "input": "data/normalized/sports_football/log.parquet",
+      "input_sha256": "5d909a92afd3f0205745f3aaf43515b634ccc00a013445e38019c9a57ed81225",
+      "k": 10,
+      "kind": "native_topk",
+      "mode": "incremental",
+      "pass": true,
+      "rank_metric": "mean",
+      "rows": 20000,
+      "status": "measured",
+      "supported": true,
+      "trajectory_checkpoints": 4
+    }
+  ],
+  "trajectory_checkpoints": 4,
+  "watermark": [
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "reference",
+      "kind": "native_watermark",
+      "mode": "unsupported",
+      "pass": null,
+      "reason": "adapter has no real event-time watermark probe",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "materialize",
+      "kind": "native_watermark",
+      "mode": "unsupported",
+      "pass": null,
+      "reason": "adapter has no real event-time watermark probe",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "risingwave",
+      "kind": "native_watermark",
+      "mode": "unsupported",
+      "pass": null,
+      "reason": "adapter has no real event-time watermark probe",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "ksqldb",
+      "kind": "native_watermark",
+      "mode": "unsupported",
+      "pass": null,
+      "reason": "adapter has no real event-time watermark probe",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "flink",
+      "kind": "native_watermark",
+      "mode": "unsupported",
+      "pass": null,
+      "reason": "adapter has no real event-time watermark probe",
+      "status": "unsupported",
+      "supported": false
+    },
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "spark",
+      "engine_api": "Structured Streaming withWatermark",
+      "kind": "native_watermark",
+      "late_event_dropped": true,
+      "mode": "event_time_incremental",
+      "on_time_event_included": true,
+      "paired_on_time_control": {
+        "counts": {
+          "2024-01-01T00:00:00Z": 2,
+          "2024-01-01T02:00:00Z": 2
+        },
+        "micro_batches": 4,
+        "rows_dropped_by_watermark": 0
+      },
+      "pass": true,
+      "status": "measured",
+      "supported": true,
+      "treatment": {
+        "counts": {
+          "2024-01-01T00:00:00Z": 2,
+          "2024-01-01T02:00:00Z": 1
+        },
+        "micro_batches": 4,
+        "rows_dropped_by_watermark": 1
+      }
+    },
+    {
+      "allowed_lateness_s": 300,
+      "artifact_valid": true,
+      "engine": "feldera",
+      "kind": "native_watermark",
+      "mode": "unsupported",
+      "pass": null,
+      "reason": "adapter has no real event-time watermark probe",
+      "status": "unsupported",
+      "supported": false
+    }
+  ]
+}

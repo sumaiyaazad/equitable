@@ -1,0 +1,145 @@
+{
+  "domain": "datacenter_drives",
+  "base_log": "data/normalized/datacenter_drives/log.parquet",
+  "base_sha256": "5b1d3e2434b415023cbb081fdf8d5de55cebc57eb183e7b7bf2afa90c1e96a55",
+  "base_rows": 1000000,
+  "seed": 1337,
+  "config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "domain_config": "config/domains/datacenter_drives.yaml",
+  "rates": {
+    "duplicate_rate": 0.005,
+    "reorder_window": 100,
+    "late_rate": 0.002,
+    "late_window": 100000,
+    "allowed_lateness_s": 43200,
+    "restate_rate": 0.01,
+    "restate_window": 5000
+  },
+  "columns": [
+    "event_time_utc",
+    "ingest_time_utc",
+    "processing_order",
+    "entity",
+    "metric",
+    "value",
+    "topic",
+    "dedupe_id",
+    "source_record_type"
+  ],
+  "dedupe_identity": "source_observation",
+  "contract_version": 2,
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "invocation_id": "benchmark_20261002T213200Z_prepare",
+  "campaign_id": "benchmark_20261002T213200Z",
+  "campaign_phase": "prepare",
+  "repeat_index": 0,
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "python_version": "3.12.12",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 16,
+  "memory_bytes": 135062691840,
+  "disk_total_bytes": 418916810752,
+  "written_utc": "2026-10-02T21:37:21Z",
+  "fixtures": [
+    {
+      "diagnostic": "D1",
+      "name": "d1_dup.parquet",
+      "sha256": "6a7e3df7cbd811cd4f02d7b6fbc73dbc50ac8b9d12677f229a88e11700a090ce",
+      "rows": 1005000,
+      "perturbation": "duplicate",
+      "rate": 0.005,
+      "window": 2000,
+      "injected_duplicates": 5000
+    },
+    {
+      "diagnostic": "D2",
+      "name": "d2_reorder.parquet",
+      "sha256": "09de51bc554fcb97eb3f29611eada6b6c6d959d573ba30f21c2a748828410b1d",
+      "rows": 1000000,
+      "perturbation": "bounded_reorder",
+      "reorder_window": 100,
+      "reorder_mode": "event_time",
+      "event_time_inversion_rate": 0.48103748103748106,
+      "distinct_event_times": 30
+    },
+    {
+      "diagnostic": "D4",
+      "name": "d4_late.parquet",
+      "sha256": "a090a5aa4050d1b423ff1e8c6dbe30bb82cf50d1e32089fb3ac343fd820e2912",
+      "rows": 1000000,
+      "perturbation": "late_arrival",
+      "rate": 0.002,
+      "late_window": 100000,
+      "late_rows": 2000,
+      "allowed_lateness_s": 43200,
+      "control_order": "event_time_utc,dedupe_id",
+      "injected_target_ids_sha256": "594d159ea7403b244e9d3fe6a263ef041e5a297dce12db47a8e67af6866a6472",
+      "event_time_inversion_rate": 0.001586001586001586,
+      "behind_watermark": 1604,
+      "behind_watermark_first_50k": 74,
+      "control_beyond_allowed_lateness": 0,
+      "control_beyond_allowed_lateness_at_50k": 0,
+      "beyond_allowed_lateness": 1604,
+      "beyond_allowed_lateness_at_50k": 74,
+      "injected_targets_present_at_50k": 91,
+      "injected_beyond_allowed_lateness_at_50k": 74,
+      "net_beyond_allowed_lateness_at_50k": 74,
+      "scale_selection": "uniform_full_log",
+      "scale_checks": {
+        "10000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 15,
+          "net_beyond_allowed_lateness": 15,
+          "injected_targets_present": 21,
+          "injected_beyond_allowed_lateness": 15
+        },
+        "50000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 74,
+          "net_beyond_allowed_lateness": 74,
+          "injected_targets_present": 91,
+          "injected_beyond_allowed_lateness": 74
+        },
+        "200000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 310,
+          "net_beyond_allowed_lateness": 310,
+          "injected_targets_present": 398,
+          "injected_beyond_allowed_lateness": 310
+        },
+        "500000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 791,
+          "net_beyond_allowed_lateness": 791,
+          "injected_targets_present": 989,
+          "injected_beyond_allowed_lateness": 791
+        },
+        "1000000": {
+          "control_beyond_allowed_lateness": 0,
+          "fixture_beyond_allowed_lateness": 1604,
+          "net_beyond_allowed_lateness": 1604,
+          "injected_targets_present": 2000,
+          "injected_beyond_allowed_lateness": 1604
+        }
+      }
+    },
+    {
+      "diagnostic": "D7",
+      "name": "d7_restate.parquet",
+      "sha256": "4a78a9477b45d92bc207961917f3535b78a0de814e62f44b4a53621935461665",
+      "rows": 1010000,
+      "perturbation": "restatement",
+      "rate": 0.01,
+      "restate_window": 5000,
+      "restatements": 10000,
+      "base_observations": 1000000,
+      "alpha": 0.01
+    }
+  ],
+  "self_check": "PASS"
+}

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use EquiTable, please cite the paper below; until it appears, cite this repository by URL and commit."
+title: "EquiTable: a correctness benchmark for maintained streaming aggregates"
+type: software
+authors:
+  - family-names: Azad
+    given-names: Sumaiya
+    orcid: "https://orcid.org/0009-0003-3188-796X"
+    affiliation: "University of Utah"
+  - family-names: Parashar
+    given-names: Manish
+    orcid: "https://orcid.org/0000-0003-0983-7408"
+    affiliation: "University of Utah"
+repository-code: "https://github.com/sumaiyaazad/equitable"
+license: Apache-2.0
+year: 2026
+keywords:
+  - streaming
+  - benchmark
+  - correctness
+  - materialized views
+  - stream processing
+preferred-citation:
+  type: unpublished
+  title: "EquiTable: Expressibility Is Not Equivalence in Maintained Streaming Aggregates"
+  authors:
+    - family-names: Azad
+      given-names: Sumaiya
+    - family-names: Parashar
+      given-names: Manish
+  year: 2026
+  notes: "Under review."

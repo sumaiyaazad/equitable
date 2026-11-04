@@ -1,0 +1,39 @@
+# Domain: Finance — market trade tape (Binance spot public trades)
+# Lineage: high-volume market trades. NOTE: substitutes the original IEX DEEP
+# plan (binary pcap, not freely available for 2024); neutral mapping unchanged.
+domain: finance_markets
+perturbation:
+  # Millisecond trade tape: a short operational allowance.
+  allowed_lateness_s: 5
+  late_window: 20000
+source:
+  name: Binance spot monthly trades
+  url: https://data.binance.vision/data/spot/monthly/trades/
+  notes: Free, no-auth per-symbol monthly trade CSVs. One file per symbol.
+  license: Binance public data terms (free)
+entity: symbol              # e.g. BTCUSDT (one file per symbol)
+metrics:
+  - name: trade_price
+    unit: quote (e.g. USDT)
+  - name: trade_size
+    unit: base asset
+event_time: trade timestamp (exchange clock, ms/us epoch -> UTC ISO8601)
+dedupe_identity: [symbol, trade_id, metric]
+buckets:
+  fine: hour
+  coarse: day
+notes: |
+  Source identity retains Binance trade_id for both price and size observations. Feed replay duplicates preserve that identity, making D1 meaningful without collapsing distinct equal-content trades. OHLC-style contract aggregates use min, max, latest, count, sum, and mean.
+
+# Raw-source -> neutral-schema mapping used by the generic normalizer
+# (src.schema.normalize_records) in scripts/ingest/ingest_finance_markets.py.
+# One Binance trade is a "wide" record (price + qty explode to two neutral rows).
+normalize:
+  layout: wide
+  entity_field: symbol
+  event_time_field: event_time_utc   # derived ISO8601 from the epoch `time` column
+  source_id_field: trade_id
+  metric_fields:
+    trade_price: price
+    trade_size: qty
+  topic_const: binance_spot

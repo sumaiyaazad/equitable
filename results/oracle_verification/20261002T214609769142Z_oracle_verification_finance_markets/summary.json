@@ -1,0 +1,286 @@
+{
+  "domain": "finance_markets",
+  "log_path": "/uufs/chpc.utah.edu/common/home/u1494915/vsa/data/normalized/finance_markets/log.parquet",
+  "input": "/uufs/chpc.utah.edu/common/home/u1494915/vsa/data/normalized/finance_markets/log.parquet",
+  "rows": 1000000,
+  "hourly_keys": 8640,
+  "daily_keys": 360,
+  "kind": "oracle_verification",
+  "pass": true,
+  "artifact_valid": true,
+  "started_utc": "2026-10-02T21:38:43Z",
+  "finished_utc": "2026-10-02T21:46:09Z",
+  "contract_version": 2,
+  "git_commit": "b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468",
+  "git_dirty": false,
+  "invocation_id": "benchmark_20261002T213200Z_prepare",
+  "campaign_id": "benchmark_20261002T213200Z",
+  "campaign_phase": "prepare",
+  "repeat_index": 0,
+  "benchmark_config_sha256": "5f65ef3bd0ba66ebead28ddf95870e8f255a8b3e4c28ee47f8cc6b8d35f6db70",
+  "dependency_lock_sha256": "d93eb5645520d1ec9bf5bc4b5aee1a98bf8ca41704da033601620da437f3a952",
+  "python_version": "3.12.12",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "hostname": "ndp-dev-198.chpc.utah.edu",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 16,
+  "memory_bytes": 135062691840,
+  "disk_total_bytes": 418916810752,
+  "input_sha256": "fd0a6e54469294741a470c40c398850ccd18d3875355536a71a35bb08ec9e16f",
+  "oracle_cache_keys": [
+    "5f495260924c57b2f9ba5f661c1724ff8eb43b43fe8b2e39d4ee822a3ceeac20"
+  ],
+  "oracle_cache": {
+    "oracle_build_s": 26.510906755924225,
+    "oracle_cache_hit": false,
+    "oracle_cache_key": "5f495260924c57b2f9ba5f661c1724ff8eb43b43fe8b2e39d4ee822a3ceeac20",
+    "oracle_cache_path": "/uufs/chpc.utah.edu/common/home/u1494915/vsa/runs/source_snapshots/b7ed8fc0bde0b701cbfa0d88d45c7f9b1fe65468/data/oracle_cache/5f495260924c57b2f9ba5f661c1724ff8eb43b43fe8b2e39d4ee822a3ceeac20",
+    "oracle_cache_files_sha256": {
+      "hourly.parquet": "eee4600413feb943af1749d36ab58b50c875792880b8dfc2e1c26b1c9173cf44",
+      "daily.parquet": "9acb0c812b8937796e166dfec0b84921d33a946e4c4e748ac47417fc272da98a"
+    }
+  },
+  "engine_health": {
+    "rows_ingested": 1000000,
+    "rows_rejected": 0,
+    "duplicate_rows": 0,
+    "out_of_order_rows": 0,
+    "dedupe_conflicts": 0,
+    "first_event_time_seen": "2024-06-01T00:00:01.748000Z",
+    "latest_event_time_seen": "2024-06-30T23:59:19.833000Z",
+    "first_ingest_time_seen": null,
+    "latest_ingest_time_seen": null,
+    "entities_seen": [
+      "ADAUSDT",
+      "BNBUSDT",
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "XRPUSDT"
+    ],
+    "metrics_seen": [
+      "trade_price",
+      "trade_size"
+    ],
+    "rows_by_entity": {
+      "ADAUSDT": 166603,
+      "BNBUSDT": 166713,
+      "BTCUSDT": 166736,
+      "ETHUSDT": 166694,
+      "SOLUSDT": 166677,
+      "XRPUSDT": 166577
+    },
+    "rows_by_metric": {
+      "trade_price": 500045,
+      "trade_size": 499955
+    },
+    "hourly_keys": 8640,
+    "daily_keys": 360,
+    "latest_keys": 12,
+    "sketches_enabled": false,
+    "hourly_quantile_keys": 0,
+    "daily_quantile_keys": 0,
+    "kll_k": null
+  },
+  "timings_s": {
+    "engine": 415.7907717488706,
+    "pandas": 24.859437338076532,
+    "duckdb": 1.651469417847693
+  },
+  "comparisons": {
+    "engine_vs_pandas_hourly": {
+      "matched_keys": 8640,
+      "total_keys": 8640,
+      "non_equivalence": {
+        "extent": 0.0,
+        "violating_keys": 0,
+        "total_keys": 8640,
+        "metric_violations": 0,
+        "exact_violations": 0,
+        "structural_violations": 0,
+        "unbounded_violations": 0,
+        "magnitude": null
+      },
+      "overlapping_keys": 8640,
+      "duplicate_online_keys": 0,
+      "duplicate_oracle_keys": 0,
+      "only_in_online": 0,
+      "only_in_oracle": 0,
+      "field_mismatches": {
+        "count": 0,
+        "latest_event_time": 0,
+        "sum": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "latest_value": 0
+      },
+      "mismatched_keys": 0,
+      "emr": 0.0,
+      "epsilon": 1e-09,
+      "equivalent": true
+    },
+    "engine_vs_pandas_daily": {
+      "matched_keys": 360,
+      "total_keys": 360,
+      "non_equivalence": {
+        "extent": 0.0,
+        "violating_keys": 0,
+        "total_keys": 360,
+        "metric_violations": 0,
+        "exact_violations": 0,
+        "structural_violations": 0,
+        "unbounded_violations": 0,
+        "magnitude": null
+      },
+      "overlapping_keys": 360,
+      "duplicate_online_keys": 0,
+      "duplicate_oracle_keys": 0,
+      "only_in_online": 0,
+      "only_in_oracle": 0,
+      "field_mismatches": {
+        "count": 0,
+        "latest_event_time": 0,
+        "sum": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "latest_value": 0
+      },
+      "mismatched_keys": 0,
+      "emr": 0.0,
+      "epsilon": 1e-09,
+      "equivalent": true
+    },
+    "engine_vs_duckdb_hourly": {
+      "matched_keys": 8640,
+      "total_keys": 8640,
+      "non_equivalence": {
+        "extent": 0.0,
+        "violating_keys": 0,
+        "total_keys": 8640,
+        "metric_violations": 0,
+        "exact_violations": 0,
+        "structural_violations": 0,
+        "unbounded_violations": 0,
+        "magnitude": null
+      },
+      "overlapping_keys": 8640,
+      "duplicate_online_keys": 0,
+      "duplicate_oracle_keys": 0,
+      "only_in_online": 0,
+      "only_in_oracle": 0,
+      "field_mismatches": {
+        "count": 0,
+        "latest_event_time": 0,
+        "sum": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "latest_value": 0
+      },
+      "mismatched_keys": 0,
+      "emr": 0.0,
+      "epsilon": 1e-09,
+      "equivalent": true
+    },
+    "engine_vs_duckdb_daily": {
+      "matched_keys": 360,
+      "total_keys": 360,
+      "non_equivalence": {
+        "extent": 0.0,
+        "violating_keys": 0,
+        "total_keys": 360,
+        "metric_violations": 0,
+        "exact_violations": 0,
+        "structural_violations": 0,
+        "unbounded_violations": 0,
+        "magnitude": null
+      },
+      "overlapping_keys": 360,
+      "duplicate_online_keys": 0,
+      "duplicate_oracle_keys": 0,
+      "only_in_online": 0,
+      "only_in_oracle": 0,
+      "field_mismatches": {
+        "count": 0,
+        "latest_event_time": 0,
+        "sum": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "latest_value": 0
+      },
+      "mismatched_keys": 0,
+      "emr": 0.0,
+      "epsilon": 1e-09,
+      "equivalent": true
+    },
+    "pandas_vs_duckdb_hourly": {
+      "matched_keys": 8640,
+      "total_keys": 8640,
+      "non_equivalence": {
+        "extent": 0.0,
+        "violating_keys": 0,
+        "total_keys": 8640,
+        "metric_violations": 0,
+        "exact_violations": 0,
+        "structural_violations": 0,
+        "unbounded_violations": 0,
+        "magnitude": null
+      },
+      "overlapping_keys": 8640,
+      "duplicate_online_keys": 0,
+      "duplicate_oracle_keys": 0,
+      "only_in_online": 0,
+      "only_in_oracle": 0,
+      "field_mismatches": {
+        "count": 0,
+        "latest_event_time": 0,
+        "sum": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "latest_value": 0
+      },
+      "mismatched_keys": 0,
+      "emr": 0.0,
+      "epsilon": 1e-09,
+      "equivalent": true
+    },
+    "pandas_vs_duckdb_daily": {
+      "matched_keys": 360,
+      "total_keys": 360,
+      "non_equivalence": {
+        "extent": 0.0,
+        "violating_keys": 0,
+        "total_keys": 360,
+        "metric_violations": 0,
+        "exact_violations": 0,
+        "structural_violations": 0,
+        "unbounded_violations": 0,
+        "magnitude": null
+      },
+      "overlapping_keys": 360,
+      "duplicate_online_keys": 0,
+      "duplicate_oracle_keys": 0,
+      "only_in_online": 0,
+      "only_in_oracle": 0,
+      "field_mismatches": {
+        "count": 0,
+        "latest_event_time": 0,
+        "sum": 0,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "latest_value": 0
+      },
+      "mismatched_keys": 0,
+      "emr": 0.0,
+      "epsilon": 1e-09,
+      "equivalent": true
+    }
+  },
+  "all_equivalent": true
+}

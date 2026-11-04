@@ -1,0 +1,42 @@
+# Domain: Air quality — EPA AirNow national hourly archive
+# Lineage: DEBS Grand Challenge 2021 (AQI); existing pipeline in this repo
+domain: environment_airquality
+source:
+  name: EPA AirNow hourly archive
+  url: https://files.airnowtech.org/
+  notes: Public hourly files; ingest at scripts/ingest/ingest_environment_airquality.py. Synoptic is DROPPED.
+  license: public (US EPA)
+entity: station             # AQS station id (~1K stations reporting pm25/ozone)
+metrics:
+  - name: pm25
+    unit: ug/m3
+  - name: ozone
+    unit: ppb
+event_time: observation hour (UTC ISO8601)
+dedupe_identity: [archive_file, source_row, metric]
+buckets:
+  fine: hour
+  coarse: day
+notes: |
+  The legacy domain is rebuilt under contract v2 with deterministic archive-file and source-row identity, explicit UTC, and uniform temporal selection.
+
+perturbation:
+  # Hourly observations: one source period of allowed lateness.
+  allowed_lateness_s: 3600
+  late_window: 50000
+
+# Raw-source -> neutral-schema mapping used by the generic normalizer
+# (src.schema.normalize_records) in the --from-raw path of
+# ingest_environment_airquality.py.
+# The AirNow hourly archive is a "long" layout: one row per station/param/value.
+normalize:
+  layout: long
+  entity_field: stid          # raw station id -> entity
+  event_time_field: event_time_utc
+  source_id_field: _source_event_id
+  metric_field: param         # raw parameter name -> metric (via metric_map)
+  value_field: value
+  metric_map:
+    OZONE: ozone
+    PM2.5: pm25
+  topic_const: airnow

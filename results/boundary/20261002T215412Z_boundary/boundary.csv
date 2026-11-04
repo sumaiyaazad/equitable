@@ -1,0 +1,6 @@
+domain,rows,injected,rejected,engine_rejected,aggregates_unchanged,pass
+datacenter_drives,5000,60,60,60,True,True
+environment_airquality,5000,60,60,60,True,True
+finance_markets,5000,60,60,60,True,True
+sports_football,5000,60,60,60,True,True
+transportation_taxi,5000,60,60,60,True,True

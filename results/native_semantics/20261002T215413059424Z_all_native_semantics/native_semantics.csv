@@ -1,0 +1,88 @@
+kind,engine,domain,status,mode,checkpoint,rows,pass,hourly_set_emr,hourly_rank_emr,daily_set_emr,daily_rank_emr,reason
+native_topk,reference,environment_airquality,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,materialize,environment_airquality,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,environment_airquality,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,environment_airquality,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,environment_airquality,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,environment_airquality,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,environment_airquality,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,environment_airquality,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,environment_airquality,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,ksqldb,environment_airquality,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,flink,environment_airquality,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,spark,environment_airquality,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,feldera,environment_airquality,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,environment_airquality,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,environment_airquality,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,environment_airquality,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,reference,transportation_taxi,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,materialize,transportation_taxi,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,transportation_taxi,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,transportation_taxi,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,transportation_taxi,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,transportation_taxi,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,transportation_taxi,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,transportation_taxi,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,transportation_taxi,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,ksqldb,transportation_taxi,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,flink,transportation_taxi,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,spark,transportation_taxi,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,feldera,transportation_taxi,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,transportation_taxi,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,transportation_taxi,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,transportation_taxi,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,reference,datacenter_drives,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,materialize,datacenter_drives,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,datacenter_drives,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,datacenter_drives,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,datacenter_drives,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,datacenter_drives,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,datacenter_drives,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,datacenter_drives,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,datacenter_drives,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,ksqldb,datacenter_drives,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,flink,datacenter_drives,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,spark,datacenter_drives,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,feldera,datacenter_drives,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,datacenter_drives,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,datacenter_drives,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,datacenter_drives,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,reference,finance_markets,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,materialize,finance_markets,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,finance_markets,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,finance_markets,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,finance_markets,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,finance_markets,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,finance_markets,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,finance_markets,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,finance_markets,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,ksqldb,finance_markets,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,flink,finance_markets,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,spark,finance_markets,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,feldera,finance_markets,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,finance_markets,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,finance_markets,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,finance_markets,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,reference,sports_football,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,materialize,sports_football,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,sports_football,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,sports_football,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,materialize,sports_football,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,sports_football,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,sports_football,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,sports_football,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,risingwave,sports_football,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_topk,ksqldb,sports_football,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,flink,sports_football,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,spark,sports_football,unsupported,unsupported,,,,,,,,adapter has no engine-maintained incremental Top-N formulation
+native_topk,feldera,sports_football,measured,incremental,1,5000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,sports_football,measured,incremental,2,10000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,sports_football,measured,incremental,3,15000,True,0.0,0.0,0.0,0.0,
+native_topk,feldera,sports_football,measured,incremental,4,20000,True,0.0,0.0,0.0,0.0,
+native_watermark,reference,-,unsupported,unsupported,,,,,,,,adapter has no real event-time watermark probe
+native_watermark,materialize,-,unsupported,unsupported,,,,,,,,adapter has no real event-time watermark probe
+native_watermark,risingwave,-,unsupported,unsupported,,,,,,,,adapter has no real event-time watermark probe
+native_watermark,ksqldb,-,unsupported,unsupported,,,,,,,,adapter has no real event-time watermark probe
+native_watermark,flink,-,unsupported,unsupported,,,,,,,,adapter has no real event-time watermark probe
+native_watermark,spark,-,measured,event_time_incremental,,,True,,,,,
+native_watermark,feldera,-,unsupported,unsupported,,,,,,,,adapter has no real event-time watermark probe

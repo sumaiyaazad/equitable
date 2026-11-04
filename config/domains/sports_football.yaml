@@ -1,0 +1,60 @@
+# Domain: Football — player positional tracking (Metrica Sports open data)
+# Lineage: player positional tracking. NOTE: substitutes the original DEBS 2013
+# plan (dead mirrors); still the position -> speed/distance derivation case study.
+domain: sports_football
+perturbation:
+  # Frame-level tracking: one second spans many source frames.
+  allowed_lateness_s: 1
+  late_window: 20000
+source:
+  name: Metrica Sports sample tracking data
+  url: https://github.com/metrica-sports/sample-data
+  notes: |
+    Per-frame player + ball positions (normalized 0..1 coords, 105x68 m pitch).
+    A documented pre-normalization step derives per-player speed and distance
+    from position deltas BEFORE the contract — reported as a contract-boundary
+    case study.
+  # Checked 2026-09-03: the repository carries NO license file. Its README
+  # ("Legal stuff") asks only for responsible use and acknowledgement of the
+  # source, which is a request, not a grant of redistribution rights. The
+  # data is therefore FETCHED by the ingest script and never redistributed
+  # in the artifact; the recorded input hash makes a reviewer-side download
+  # reproduce the identical log.
+  license: No license file; README requests acknowledgement. Not redistributed.
+  license_checked_utc: "2026-09-03"
+  redistributable: false
+entity: player              # "{team}_{jersey}" (~28 players + ball)
+metrics:
+  - name: speed
+    unit: m/s
+  - name: distance
+    unit: m               # per-frame displacement
+  - name: pos_x
+    unit: m
+  - name: pos_y
+    unit: m
+event_time: synthetic match epoch + Time[s] (UTC ISO8601)
+dedupe_identity: [tracking_file, player, frame, metric]
+buckets:
+  fine: hour
+  coarse: day
+notes: |
+  Lowest entity cardinality in the slate (~28 players + ball); positions are
+  derived, not raw sensors. event_time is a fixed synthetic epoch so the log is
+  reproducible even though the match has no calendar date.
+
+# Raw-source -> neutral-schema mapping used by the generic normalizer
+# (src.schema.normalize_records) in scripts/ingest/ingest_sports_football.py.
+# One (player, frame) is a "wide" record; speed/distance/pos_x/pos_y are derived
+# by the parser before normalization.
+normalize:
+  layout: wide
+  entity_field: player
+  event_time_field: event_time_utc
+  source_id_field: _source_event_id
+  metric_fields:
+    speed: speed
+    distance: distance
+    pos_x: pos_x
+    pos_y: pos_y
+  topic_const: metrica

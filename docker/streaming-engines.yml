@@ -1,0 +1,217 @@
+# Docker Compose for the containerized systems under test (SUTs).
+#
+# Adapters live in src/adapters/; the acceptance check is
+# scripts/adapters/smoke.py. Flink (batch) and Spark (local) run in-process via
+# pip (apache-flink / pyspark) and need no container here; the reference engine
+# is in-process. Only Materialize, RisingWave, ksqlDB (+ Kafka), and Feldera
+# need containers.
+#
+# Usage (from repo root):
+#   docker compose -f docker/streaming-engines.yml up -d materialize risingwave kafka ksqldb feldera
+#   python scripts/adapters/smoke.py --engine materialize
+#   python scripts/adapters/smoke.py --engine risingwave
+#   python scripts/adapters/smoke.py --engine ksqldb
+#   python scripts/adapters/smoke.py --engine feldera
+#
+# Reproducibility: every image is pinned by content digest (tag@sha256) so the
+# SUT version cannot drift under a moving tag. The digest registry (with the
+# resolution date) is config/engines/pinned.yaml; keep both files in sync.
+
+services:
+
+  materialize:
+    image: materialize/materialized:latest@sha256:ccfaa64a87d16beff62b86cc6f8e97caa5d120c6e8eced3573f0693c2cf69c94
+    ports:
+      - "127.0.0.1:6877:6875"   # SQL
+    healthcheck:
+      test: ["CMD-SHELL", "psql -h localhost -p 6875 -U materialize -c 'SELECT 1' || exit 1"]
+      interval: 10s
+      retries: 6
+
+  # Apache Flink 2.2.1 session cluster: the scored Flink deployment. A JobManager
+  # schedules, a TaskManager runs the operators with RocksDB state, and every
+  # retained checkpoint lands on the flink_checkpoints volume both mount. D5
+  # kills the TaskManager; the JobManager restarts the job from its latest
+  # completed checkpoint once the TaskManager returns. The SQL Gateway is the
+  # adapter's entry point (src/adapters/flink_cluster.py).
+  flink-jobmanager:
+    build: ./flink-cluster
+    image: equitable/flink-cluster:2.2.1
+    command: jobmanager
+    ports:
+      - "127.0.0.1:8081:8081"   # REST API and web UI
+    environment:
+      - &flink_properties |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: flink-jobmanager
+        rest.address: flink-jobmanager
+        jobmanager.memory.process.size: 2g
+        taskmanager.memory.process.size: 12g
+        taskmanager.numberOfTaskSlots: 8
+        parallelism.default: 2
+        state.backend.type: rocksdb
+        execution.checkpointing.dir: file:///checkpoints
+        execution.checkpointing.interval: 5 s
+        execution.checkpointing.num-retained: 3
+        execution.checkpointing.externalized-checkpoint-retention: RETAIN_ON_CANCELLATION
+        restart-strategy.type: fixed-delay
+        restart-strategy.fixed-delay.attempts: 100
+        restart-strategy.fixed-delay.delay: 5 s
+    volumes:
+      - flink_checkpoints:/checkpoints
+  flink-taskmanager:
+    image: equitable/flink-cluster:2.2.1
+    command: taskmanager
+    depends_on:
+      - flink-jobmanager
+    environment:
+      - *flink_properties
+    volumes:
+      - flink_checkpoints:/checkpoints
+  flink-sql-gateway:
+    image: equitable/flink-cluster:2.2.1
+    depends_on:
+      - flink-jobmanager
+    # Jobs take their configuration from the gateway that plans them, not from
+    # the JobManager. Without the shared properties here, every job ran with
+    # checkpointing disabled (interval Long.MAX_VALUE), measured on 2.2.1.
+    environment:
+      - *flink_properties
+    command:
+      - bin/sql-gateway.sh
+      - start-foreground
+      - -Dsql-gateway.endpoint.rest.address=0.0.0.0
+      - -Dsql-gateway.endpoint.rest.port=8083
+      - -Drest.address=flink-jobmanager
+      - -Drest.port=8081
+      - -Dexecution.target=remote
+    ports:
+      - "127.0.0.1:8083:8083"   # SQL Gateway REST
+
+  # Apache Spark 4.2.0 standalone cluster: the scored Spark deployment. The driver
+  # service runs the maintained queries in client mode, executors on the worker do
+  # the work, and every query checkpoints to the shared bind mount, which the host
+  # adapter also reads and writes (src/adapters/spark_cluster.py). D5 kills the
+  # driver; its restart resumes the same queries from their checkpoints.
+  spark-master:
+    build: ./spark-cluster
+    image: equitable/spark-cluster:4.2.0
+    command: &spark_class
+      - sh
+      - -c
+      - exec "$$(python -c 'import os, pyspark; print(os.path.dirname(pyspark.__file__))')/bin/spark-class" "$$@"
+      - spark-class
+      - org.apache.spark.deploy.master.Master
+      - --host
+      - spark-master
+      - --port
+      - "7077"
+      - --webui-port
+      - "8080"
+    ports:
+      - "127.0.0.1:18080:8080"   # master web UI
+  spark-worker:
+    image: equitable/spark-cluster:4.2.0
+    depends_on:
+      - spark-master
+    command:
+      - sh
+      - -c
+      - exec "$$(python -c 'import os, pyspark; print(os.path.dirname(pyspark.__file__))')/bin/spark-class" "$$@"
+      - spark-class
+      - org.apache.spark.deploy.worker.Worker
+      - spark://spark-master:7077
+      - --cores
+      - "6"
+      - --memory
+      - 10g
+    volumes:
+      - ${EQUITABLE_SPARK_CLUSTER_ROOT:-/tmp/equitable_spark_cluster}:/data
+  spark-driver:
+    image: equitable/spark-cluster:4.2.0
+    depends_on:
+      - spark-master
+      - spark-worker
+    command: ["python", "/opt/driver_service.py"]
+    environment:
+      - SPARK_EXECUTOR_CORES=4
+      - SPARK_EXECUTOR_MEMORY=6g
+      - SPARK_SHUFFLE_PARTITIONS=2
+    ports:
+      - "127.0.0.1:8090:8090"   # driver control service
+    volumes:
+      - ${EQUITABLE_SPARK_CLUSTER_ROOT:-/tmp/equitable_spark_cluster}:/data
+
+  risingwave:
+    image: risingwavelabs/risingwave:latest@sha256:18f5057c032a63d4513c6a700fa37489efe59b19f5bb56047b66b259ffb92aef
+    command: ["playground"]
+    ports:
+      - "127.0.0.1:4566:4566"   # PostgreSQL wire protocol
+    # The pinned image ships no psql, so a psql-based healthcheck reports
+    # `unhealthy` forever however healthy the engine is -- it did, for the whole
+    # benchmark run, which is why nobody noticed the container was in-memory. Use
+    # the bash TCP probe the image can actually run, matching the host-side probe
+    # in scripts/run/engine_probe.sh.
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 2 bash -c '</dev/tcp/127.0.0.1/4566' || exit 1"]
+      interval: 10s
+      retries: 6
+
+  # ksqlDB requires Kafka. Use a single-broker dev cluster.
+  kafka:
+    image: confluentinc/cp-kafka:7.5.1@sha256:dc9b972db0029bca9c9fa33fb7d271bbd6de35bfe56bed42d78dcb4b0b63f6b2
+    environment:
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_NODE_ID: 1
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      KAFKA_LISTENERS: "INTERNAL://0.0.0.0:9092,EXTERNAL://0.0.0.0:19092,CONTROLLER://0.0.0.0:9093"
+      KAFKA_ADVERTISED_LISTENERS: "INTERNAL://kafka:9092,EXTERNAL://localhost:19092"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "INTERNAL"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      # Single-broker dev cluster: the transactional producer ksqlDB uses for its
+      # command topic needs these at 1, or InitProducerId hangs (RF/ISR default 3).
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      CLUSTER_ID: "MkU3OEVBNTcwNTJENDM2Qk"
+    ports:
+      # Host clients reach the EXTERNAL listener (advertises localhost:19092).
+      # Mapping to container 9092 would expose the INTERNAL listener
+      # (which advertises kafka:9092, unresolvable from the host).
+      - "127.0.0.1:19092:19092"
+
+  ksqldb:
+    image: confluentinc/ksqldb-server:0.29.0@sha256:1a3266adff1a53a08f2e2d749e0032b77cf3a9b16b4d86d9a4481321bad00010
+    depends_on:
+      - kafka
+    environment:
+      KSQL_BOOTSTRAP_SERVERS: "kafka:9092"
+      KSQL_LISTENERS: "http://0.0.0.0:8088"
+      KSQL_KSQL_SERVICE_ID: "${KSQL_SERVICE_ID:-verifiable_stream}"
+    ports:
+      - "127.0.0.1:8088:8088"
+
+  # Feldera (DBSP incremental view maintenance), the positive control.
+  # Single-container "sandbox" image bundles the pipeline-manager REST API.
+  feldera:
+    image: ghcr.io/feldera/pipeline-manager:0.324.0@sha256:7eb67e48f6cb0d6e65db56cd07e3bbf297af8c48a2be41b0618839b7ec50ea48
+    # Every distinct SQL program compiles to a Rust crate under
+    # /home/ubuntu/.feldera/compiler/rust-compilation/target, in the container
+    # layer rather than on a volume. One campaign grew it to 216 GB and filled the
+    # host on 2026-09-14. This build documents the switch below as letting the
+    # compiler clear that tree when disk runs short; it touches only build
+    # artifacts, never pipeline state. benchmark.sh also resets the container
+    # after every Feldera phase, which does not depend on this flag.
+    environment:
+      FELDERA_UNSTABLE_FEATURES: rust_compiler_full_cleanup
+    ports:
+      - "127.0.0.1:8080:8080"   # REST API (/v0/pipelines/...)
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/healthz || exit 1"]
+      interval: 10s
+      retries: 6
+
+volumes:
+  flink_checkpoints:

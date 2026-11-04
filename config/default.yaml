@@ -1,0 +1,70 @@
+# EquiTable canonical benchmark configuration.
+# Every fixture builder, diagnostic, and figure generator reads THIS file.
+# Changing a value here changes it everywhere — never hard-code these in scripts.
+
+seed: 1337
+
+comparator:
+  epsilon: 1.0e-9          # float tolerance; ints and strings require exact equality
+
+perturbation:              # Global defaults; domain YAML can override timing values
+  duplicate_rate: 0.005    # D1: fraction of rows duplicated byte-identically
+  duplicate_window: 2000   # D1: max arrival-slot delay between a row and its copy.
+                           #     Same reason as restate_window and late_window: the
+                           #     old unbounded placement drew the copy uniformly
+                           #     over the whole remaining stream, so a prefix of
+                           #     fraction f realised only f*duplicate_rate. A 50k
+                           #     prefix of the 1M taxi fixture carried 14 duplicate
+                           #     rows instead of ~250, and D1 ran at 6% of its
+                           #     declared rate while the vacuity guard still passed.
+                           #     Bounded placement realises the rate in every
+                           #     prefix from 10k up, and 2000 slots still spans
+                           #     bucket and commit-interval boundaries.
+  reorder_window: 100      # D2: local shuffle window, in units of `reorder_mode`
+  reorder_mode: event_time # D2: 'event_time' measures the window in DISTINCT event
+                           #     times; 'positional' (the original) in row positions.
+                           #     Positional was vacuous on tie-dense domains -- it
+                           #     produced 0% event-time inversions on datacenter_drives
+                           #     and 0.87% on environment_airquality.
+  late_rate: 0.002         # D4: fraction of rows delivered late
+  late_window: 20000       # D4 default; domain YAML scales this to source cadence. The
+                           #     same reason as restate_window: the old tail placement
+                           #     pushed every delayed row past position ~1M, so a 50k
+                           #     prefix contained 0 records behind the watermark on
+                           #     3 of 5 domains and D4 was testing an unperturbed log.
+  allowed_lateness_s: 60   # D4 default; domain YAML scales this to source cadence
+  restate_rate: 0.01       # D7: fraction of cells superseded by a later corrected value
+                           #     (== bounded-deletion ratio alpha for the sketch bound)
+  restate_window: 5000     # D7: max arrival-slot delay between an observation and its
+                           #     correction. Bounded so that alpha is realised inside the
+                           #     prefix a diagnostic replays: under the previous unbounded
+                           #     placement a 50k prefix of the 1M fixture carried only 7
+                           #     restatements instead of ~500.
+  malformed_rows: 60       # boundary validation: invalid flat rows appended.
+                           # Must be a multiple of the violation classes in
+                           # scripts/run/run_boundary.py, which cycles through
+                           # them: at 5 the sixth class was never injected, so
+                           # the control passed without ever testing it.
+
+d5:
+  kill_at_fraction: 0.5    # prefix fraction committed before the barrier and SIGKILL
+  kill_signal: SIGKILL
+
+d6:
+  k: 10                    # streaming top-k size
+  rank_metric: mean        # rank entities by windowed mean
+
+sketch:
+  kll_k: 200
+  d7s_kll_k: 800           # D7S sketch size: KLL noise (~0.2% rank err) must sit well
+                           #   below the alpha=restate_rate distortion it must detect
+  quantiles: [0.5, 0.9, 0.99]  # D7S: quantile queries scored per (day, metric) group
+  rank_tol: 0.01           # D7S: control-relative excess above this = QER violation
+                           #   (0.005 was one ULP under airquality's worst excess ~0.00501)
+  min_group: 20            # D7S: skip groups with fewer corrected observations
+
+replay:
+  rate_multipliers: [1, 10, 50]
+
+runs:
+  repeats: 3               # design-space map repeats per (engine, domain, diag)
