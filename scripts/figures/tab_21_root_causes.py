@@ -123,7 +123,7 @@ FAMILY_CAUSES: Dict[str, Tuple[str, str, str, str, Tuple[str, ...]]] = {
         # Posted to user@flink.apache.org 2026-10-02; filed as FLINK-40964 2026-10-08.
         # A contributor replied 2026-10-23: fixed by FLINK-40368 (2.2.2, 2.3.1, 2.4.0).
         r"reported~\cite{flink_issue40964}; "
-        r"fixed from 2.2.2~\cite{flink_issue40368}",
+        r"fix due in 2.2.2~\cite{flink_issue40368}",
         ("S3_rank_by_latest", "S5_filter_on_latest")),
 }
 
