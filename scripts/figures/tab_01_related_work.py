@@ -142,7 +142,7 @@ ROWS = [
 ]
 
 CAPTION = (
-    "Position against prior streaming benchmarks. "
+    "Comparison with prior streaming benchmarks. "
     "$\\cmark$~full, $\\sim$~partial, $\\times$~not evaluated in the cited "
     "work. EquiTable loses on distributed execution and query breadth."
 )

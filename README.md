@@ -48,7 +48,7 @@ Figures 1 and 2 are drawn, not measured, so they are not included.
 | Table VIII | Validity controls on the benchmark itself: oracle agreement, schema boundary checks, mutation detection | `tab_12_validation.py` | `tables/tab_12_validation.tex` | `results/oracle_verification/`, `results/boundary/`, `results/mutation/`, `results/d7s_sweep/` |
 | Table IX | Verdict stability across workload sizes, 10k to 1M events | `tab_08_scaling.py` | `tables/tab_08_scaling.tex` | `results/scaling/` |
 | Table X | Floating-point replay drift by degree of parallelism, and the wall-time cost of the repaired query against the arrival-ordered one | `results_experiments.py --tables-only` | `tables/tab_22_parallel_cost.tex` | `results/parallelism_sweep/`, `results/formulation_cost/` |
-| Table XI | Position against prior benchmarks | `tab_01_related_work.py` | `tables/tab_01_related_work.tex` | curated in the script |
+| Table XI | Comparison with prior benchmarks | `tab_01_related_work.py` | `tables/tab_01_related_work.tex` | curated in the script |
 | Figure 3 | Contract equivalence per engine, diagnostic and domain: the 240 cells of the main grid | `fig_02_design_space.py` | `figures/fig_02_design_space.png` | `results/design_space/` |
 | Figure 4 | Attribution: whether a pass belongs to the engine, to the repaired query, or to both | `fig_05_attribution.py` | `figures/fig_05_attribution.png` | `results/design_space/`, `results/query_family/` |
 | Figure 5 | Keys whose arrival-ordered latest value is wrong, as out-of-order delivery grows from none to a full shuffle | `fig_06_disorder.py` | `figures/fig_06_disorder.png` | `results/disorder_sweep/` |
