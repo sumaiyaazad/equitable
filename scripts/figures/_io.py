@@ -38,6 +38,39 @@ ENGINE_ORDER = [
     "feldera",
 ]
 
+# Product names for the engine identifiers above. Identifiers stay lowercase in
+# results, manifests and cell keys; only rendered prose, tables and figure
+# labels use the product name. "reference" is not a product and is unchanged.
+ENGINE_DISPLAY = {
+    "materialize": "Materialize",
+    "risingwave": "RisingWave",
+    "ksqldb": "ksqlDB",
+    "flink": "Flink",
+    "spark": "Spark",
+    "feldera": "Feldera",
+}
+
+# Generated files whose bare engine identifiers are rewritten to product names
+# on write: the prose blocks and the tables that name engines in cells or
+# captions. Citation keys (ksql_issue11210), labels and URL paths
+# (github.com/feldera/feldera) are left alone by the boundary rule below.
+DISPLAY_NAME_STEMS = {
+    "tab_04_components", "tab_08_scaling", "tab_21_root_causes",
+    "tab_22_parallel_cost",
+}
+_DISPLAY_NAME_RE = re.compile(
+    r"(?<![\w/\-])(" + "|".join(ENGINE_DISPLAY) + r")(?![\w/\-])")
+
+
+def engine_display(name: str) -> str:
+    """Return the product name for an engine identifier; others pass through."""
+    return ENGINE_DISPLAY.get(name, name)
+
+
+def display_engine_names(tex: str) -> str:
+    """Rewrite bare engine identifiers in rendered text to product names."""
+    return _DISPLAY_NAME_RE.sub(lambda m: ENGINE_DISPLAY[m.group(1)], tex)
+
 CONTRACT_DOMAINS = frozenset({
     "environment_airquality",
     "transportation_taxi",
@@ -435,6 +468,8 @@ def figure_output_dir() -> Path:
 def write_table(tex: str, stem: str) -> List[Path]:
     """Write `stem`.tex to every table output directory."""
     written: List[Path] = []
+    if stem.startswith("results_") or stem in DISPLAY_NAME_STEMS:
+        tex = display_engine_names(tex)
     for out_dir in table_output_dirs():
         out_dir.mkdir(parents=True, exist_ok=True)
         path = out_dir / f"{stem}.tex"

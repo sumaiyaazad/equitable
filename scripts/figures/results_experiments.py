@@ -43,7 +43,9 @@ def _english(items: List[str]) -> str:
         return "none"
     if len(items) == 1:
         return items[0]
-    return ", ".join(items[:-1]) + " and " + items[-1]
+    if len(items) == 2:
+        return items[0] + " and " + items[1]
+    return ", ".join(items[:-1]) + ", and " + items[-1]
 
 
 def _load(block: str, path: Optional[str]) -> Dict[str, Any]:
@@ -79,7 +81,7 @@ def disorder_prose(summary: Dict[str, Any]) -> str:
     if all((d, g, "100") in exposure for d, g in series):
         vals = [exposure[(d, g, "100")]["wrong_fraction"] for d, g in series]
         parts.append(
-            f"At D2's displacement the share ranges from {_pct(min(vals))} to "
+            f"At D2's displacement, the share ranges from {_pct(min(vals))} to "
             f"{_pct(max(vals))}.")
     # Which domain is least exposed, and why, read from the data.
     if all((d, g, "10") in exposure for d, g in series):
@@ -109,7 +111,7 @@ def disorder_prose(summary: Dict[str, Any]) -> str:
         word = lambda k: words[k] if k < len(words) else f"{k:,}"
         parts.append(
             f"The {word(len(engines))} engines, {_english(engines)}, were replayed at "
-            f"{word(len(wins))} displacements, {disp}, {n:,} cells in all, and "
+            f"{word(len(wins))} displacements: {disp}, {n:,} cells in all, and "
             + ("every one landed on its domain's curve. " if on_curve == n else
                f"{on_curve:,} of them landed on their domain's curve. ")
             + ("Every repaired view matches" if repair_ok == n else
@@ -193,13 +195,13 @@ def cost_prose(summary: Dict[str, Any]) -> str:
         f"{lo:.2f} and {hi:.2f} times as long as the arrival-ordered one, "
         f"with a median of {med:.2f}, measured one engine at a time.")
     if hi <= 1.25:
-        text += " Where an engine can state the event-time rule, stating it is cheap."
+        text += " Where an engine can express the event-time rule, doing so is cheap."
     elif med <= 1.25:
         text += (" The repair is cheap on most engines; "
                  + _english([e for e, d in ratios.items() if max(d.values()) > 1.25])
                  + " pays a visible price.")
     else:
-        text += " The repair has a real cost, which a query author should weigh."
+        text += " The repair has a real cost, which a user should weigh."
     return text + " ksqlDB has no event-time formulation to time."
 
 

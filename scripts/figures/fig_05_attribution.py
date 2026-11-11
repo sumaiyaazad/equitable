@@ -185,7 +185,7 @@ def render(cells: List[Dict[str, Any]], family: Dict[str, Any], out_dir: Path) -
                 ax.text(members / 2, i, "not run", ha="center", va="center",
                         fontsize=7, style="italic", color=MUTED, zorder=3)
 
-    ax_a.set_yticks(range(len(engines)), engines)
+    ax_a.set_yticks(range(len(engines)), [_io.engine_display(e) for e in engines])
     ax_a.set_xticks([0, 5, 10, 15])
     ax_a.set_xlabel("cells")
     ax_b.set_xlabel("family members")

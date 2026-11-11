@@ -153,7 +153,7 @@ def render(rows: List[dict], out_dir) -> int:
     ax.set_xticks(range(len(diag_list)))
     ax.set_xticklabels(diag_list)
     ax.set_yticks(range(len(engine_list)))
-    ax.set_yticklabels(engine_list)
+    ax.set_yticklabels([_io.engine_display(e) for e in engine_list])
     ax.set_xlabel("Diagnostic")
     ax.set_ylabel("Engine")
     ax.tick_params(length=0)

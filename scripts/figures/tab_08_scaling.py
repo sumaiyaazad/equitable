@@ -102,9 +102,16 @@ def _unstable_txt(rows: List[Dict[str, Any]]) -> str:
         for (here, there), cells in sorted(moved[size].items()):
             names = [f"{engine} {diag} on {_english(sorted(domains))}"
                      for (engine, diag), domains in sorted(cells.items())]
-            count += sum(len(d) for d in cells.values())
-            parts.append(f"{_english(names)} {{verb}} {here} where the design "
-                         f"point is {there}")
+            n_cells = sum(len(d) for d in cells.values())
+            count += n_cells
+            # The design-point clause takes a verb: "diverge" for divergent,
+            # "are <status>" otherwise, singular when the part has one cell.
+            if there == "divergent":
+                design_clause = "diverges" if n_cells == 1 else "diverge"
+            else:
+                design_clause = f"{'is' if n_cells == 1 else 'are'} {there}"
+            parts.append(f"{_english(names)} {{verb}} {here}, whereas the design "
+                         f"{'point' if n_cells == 1 else 'points'} {design_clause}")
         verb = "is" if count == 1 else "are"
         sentences.append(f"At {size:,} rows, "
                          + "; ".join(x.replace("{verb}", verb) for x in parts) + ".")
