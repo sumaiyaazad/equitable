@@ -12,6 +12,8 @@ authors:
     orcid: "https://orcid.org/0000-0003-0983-7408"
     affiliation: "University of Utah"
 repository-code: "https://github.com/sumaiyaazad/equitable"
+version: "1.1"
+date-released: "2026-11-13"
 license: Apache-2.0
 year: 2026
 keywords:

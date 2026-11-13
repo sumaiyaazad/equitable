@@ -23,8 +23,8 @@ identity tie-break; a pass is therefore attributed to the engine or to the
 query. The benchmark covers six released engines across SQL streaming
 (ksqlDB), structured streaming (Spark), streaming dataflow (Flink) and
 incremental view maintenance (Materialize, RisingWave, Feldera), plus an
-in-process reference implementation, on five real-world domains of one
-million events each. This
+in-process reference implementation, on five real-world datasets from five
+application domains, one million events each. This
 repository is the artifact of the paper *EquiTable: Expressibility Is Not Equivalence in Maintained Streaming Aggregates*: the code, the
 pinned environment, the ingest scripts and data manifests, the locked results, and the generators
 of the paper's measured tables and figures.
@@ -43,7 +43,7 @@ Figures 1 and 2 are drawn, not measured, so they are not included.
 | Table I | One confirmed public incident per correctness condition | `tab_11_witnesses.py` | `tables/tab_11_witnesses.tex` | `data/incidents.yaml` |
 | Table II | The normalized row schema | `tab_03_schema.py` | `tables/tab_03_schema.tex` | `src/schema/record.py` |
 | Table V | The seven execution backends and their pinned releases | `tab_04_components.py` | `tables/tab_04_components.tex` | `config/engines/pinned.yaml`, `src/adapters/` |
-| Table VI | The five domains | `tab_02_domains.py` | `tables/tab_02_domains.tex` | `config/domains/*.yaml` |
+| Table VI | The five application domains and their source datasets | `tab_02_domains.py` | `tables/tab_02_domains.tex` | `config/domains/*.yaml` |
 | Table VII | The defect ledger: every divergent cell (engine, domain, diagnostic) and its root cause: engine defect, documented semantics, or precision trade-off | `tab_21_root_causes.py` | `tables/tab_21_root_causes.tex` | `results/design_space/`, `results/query_family/` |
 | Table VIII | Validity controls on the benchmark itself: oracle agreement, schema boundary checks, mutation detection | `tab_12_validation.py` | `tables/tab_12_validation.tex` | `results/oracle_verification/`, `results/boundary/`, `results/mutation/`, `results/d7s_sweep/` |
 | Table IX | Verdict stability across workload sizes, 10k to 1M events | `tab_08_scaling.py` | `tables/tab_08_scaling.tex` | `results/scaling/` |

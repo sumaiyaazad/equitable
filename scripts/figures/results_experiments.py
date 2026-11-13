@@ -112,7 +112,7 @@ def disorder_prose(summary: Dict[str, Any]) -> str:
         parts.append(
             f"The {word(len(engines))} engines, {_english(engines)}, were replayed at "
             f"{word(len(wins))} displacements: {disp}, {n:,} cells in all, and "
-            + ("every one landed on its domain's curve. " if on_curve == n else
+            + ("every one landed on its dataset's curve. " if on_curve == n else
                f"{on_curve:,} of them landed on their domain's curve. ")
             + ("Every repaired view matches" if repair_ok == n else
                f"{repair_ok:,} of the {n:,} repaired views match")

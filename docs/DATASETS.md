@@ -65,7 +65,7 @@ schema (`event_time_utc`, `entity`, `metric`, `value`, `dedupe_id`,
 the small manifests are tracked. The
 per-domain field mappings are in `config/domains/<domain>.yaml`.
 
-All five domains are rebuilt and verified against their manifests by
+All five datasets are rebuilt and verified against their manifests by
 
 ```bash
 ./reproduce_all.sh data
